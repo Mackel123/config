@@ -1,0 +1,6 @@
+require("plugins.ui.barbar")
+require("plugins.ui.alpha")
+require("plugins.ui.lualine")
+require("plugins.ui.telescope")
+require("plugins.ui.noice")
+require("plugins.ui.toggleterm")
