@@ -161,5 +161,21 @@ return {
     "stevearc/dressing.nvim"  } },
 	'nvim-telescope/telescope-ui-select.nvim',
 	'nvim-lua/popup.nvim',
-	'nvim-telescope/telescope-media-files.nvim'
+	'nvim-telescope/telescope-media-files.nvim',
+	{
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+   },
+	{ "kdheepak/lazygit.nvim",cmd = {
+    		"LazyGit",
+    		"LazyGitConfig",
+    		"LazyGitCurrentFile",
+    		"LazyGitFilter",
+    		"LazyGitFilterCurrentFile",
+    	},
+        dependencies = {   "nvim-lua/plenary.nvim",  },
+        keys = {  { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } }
+	}
 }
