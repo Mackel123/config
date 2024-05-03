@@ -67,7 +67,7 @@ ruled.client.connect_signal("request::rules", function()
   	ruled.client.append_rule {
         rule_any   = { class = {"Atril" , "masterpdfeditor4","LibreOffice", "libreoffice-writer", "libreoffice-calc",
 			                 "libreoffice-impress", "libreoffice-startcenter", "libreoffice", "*:libreofficedev"} },
-        properties = { screen = 1, tag = " 󰏆 " }
+        properties = { screen = 1, tag = " 󰏆  " }
   	}
   	ruled.client.append_rule {
         rule_any   = { class = {"thunderbird" ,"TelegramDesktop", "Discord" } },
