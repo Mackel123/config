@@ -30,7 +30,7 @@ ruled.client.connect_signal("request::rules", function()
             class    = {
                 "Arandr", "Blueman-manager", "Gpick", "Kruler", "Sxiv",
                 "Tor Browser", "Wpa_gui", "veromix", "xtightvncviewer",
-								"thunar","Thunderbird","Viewnior", "lxappearance","lxtask",
+								"thunar","Thunderbird","Viewnior", "lxappearance","lxtask","vlc", "deadbeef","libreoffice-startcenter"
             },
             name    = {
                 "Event Tester",  -- xev.
@@ -49,15 +49,15 @@ ruled.client.connect_signal("request::rules", function()
         id         = "titlebars",
         rule_any   = { type = { "normal", "dialog" } },
         properties = { titlebars_enabled = false      }
-    }
+    } 
 
     -- tag application map
      ruled.client.append_rule {
-         rule_any    = { class = {"firefox" ,"qutebrowser", "brave","floorp" }   },
-         properties = { screen = 1, tag = "  " }
+         rule_any    = { class = {"firefox" ,"qutebrowser", "brave", "floorp"  }   },
+         properties = { screen = 1, tag = "   " }
      }
 	   ruled.client.append_rule {
-         rule_any    = { class = {"Thunar" ,"pcmanfm-qt", "qbittorrent" }  },
+         rule_any    = { class = {"Thunar" ,"pcmanfm-qt", "qBittorrent" }  },
          properties = { screen = 1, tag = "   " }
      }
 	   ruled.client.append_rule {
@@ -65,21 +65,21 @@ ruled.client.connect_signal("request::rules", function()
          properties = { screen = 1, tag = "   " }
      }
   	ruled.client.append_rule {
-        rule_any   = { class = {"Gucharmap" ,"Atril" ,"Evince","Master PDF Editor", "libreoffice-writer", "libreoffice-calc",
-			                 "libreoffice-impress", "libreoffice-startcenter", "libreoffice", "Soffice", "*:libreofficedev","*:soffice"} },
-        properties = { screen = 1, tag = "  󰏆 " }
+        rule_any   = { class = {"Atril" , "masterpdfeditor4","LibreOffice", "libreoffice-writer", "libreoffice-calc",
+			                 "libreoffice-impress", "libreoffice-startcenter", "libreoffice", "*:libreofficedev"} },
+        properties = { screen = 1, tag = " 󰏆 " }
   	}
   	ruled.client.append_rule {
-        rule_any   = { class = {"Thunderbird" ,"TelegramDesktop","Hexchat" ,"Discord" } },
+        rule_any   = { class = {"thunderbird" ,"TelegramDesktop", "Discord" } },
         properties = { screen = 1, tag = "   " }
     }
     ruled.client.append_rule {
-        rule_any   = { class = {"Audacity" ,"kdenlive","mpv","vlc" ,"Dopamine","deadbeef" ,"darktable" ,"HandBrake" ,"spotify", "RawTherapee" } },
-        properties = { screen = 1, tag = " 󰕧 " }
+        rule_any   = { class = {"Audacity" , "mpv","Dopamine","deadbeef" ,"Darktable" ,"HandBrake" ,"spotify", "RawTherapee" ,"vlc"} },
+        properties = { screen = 1, tag = " 󰕧  " }
     }
     ruled.client.append_rule {
-        rule_any  = { class = {"Inkscape" ,"Gimp-2.10", "blender", "resolve" ,"Fusion", "kdenlive","REAPER" ,"krita" } },
-        properties = { screen = 1, tag = " 󰨜 " }
+        rule_any  = { class = { "Inkscape" ,"Gimp-2.10", "blender", "resolve" ," Fusion", "kdenlive","REAPER" ,"krita" } },
+        properties = { screen = 1, tag = " 󰨜  " }
     }
     ruled.client.append_rule {
         rule_any  = { class = {"VirtualBox Manager" ,"GParted","Lxappearance","Lxtask","Lxrandr","Exo-helper-1",

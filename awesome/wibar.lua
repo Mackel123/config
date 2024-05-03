@@ -165,7 +165,7 @@ r_sep = wibox.widget.textbox(" ] ")
 
 screen.connect_signal("request::desktop_decoration", function(s)
     -- Each screen has its own tag table.
-    awful.tag({ "   ","  ", "   ","   ", " 󰏆  ", "   ", " 󰕧  ", " 󰨜  ", "   " }, s, awful.layout.layouts[1])
+    awful.tag({ "   ","   ", "   ","   ", " 󰏆  ", "   ", " 󰕧  ", " 󰨜  ", "   " }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
