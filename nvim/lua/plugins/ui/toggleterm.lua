@@ -24,8 +24,8 @@ require("toggleterm").setup{
 	persist_mode = true,
 	float_opts = {
     border = "single",
-		width = 120,
-		height = 50,
+		width = 96,
+		height = 10,
 		winlend = 3,
 		title_pos = "left",
 
