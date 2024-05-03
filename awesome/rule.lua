@@ -29,7 +29,7 @@ ruled.client.connect_signal("request::rules", function()
             instance = { "copyq", "pinentry" },
             class    = {
                 "Arandr", "Blueman-manager", "Gpick", "Kruler", "Sxiv",
-                "Tor Browser", "Wpa_gui", "veromix", "xtightvncviewer",
+                "Tor Browser", "Wpa_gui", "veromix", "xtightvncviewer","pavucontrol",
 								"thunar","Thunderbird","Viewnior", "lxappearance","lxtask","vlc", "deadbeef","libreoffice-startcenter"
             },
             name    = {
@@ -82,7 +82,7 @@ ruled.client.connect_signal("request::rules", function()
         properties = { screen = 1, tag = " 󰨜  " }
     }
     ruled.client.append_rule {
-        rule_any  = { class = {"VirtualBox Manager" ,"GParted","Lxappearance","Lxtask","Lxrandr","Exo-helper-1",
+        rule_any  = { class = {"VirtualBox Manager" ,"GParted","Lxappearance","Lxtask","Lxrandr","Exo-helper-1","pavucontrol",
 			                "Xfce4-power-manager-settings","Print Settings" ,"Power Manager" ,"Kvantum Manager" ,"qt5ct" , "qt6ct" ,"Pomatez" } },
         properties = { screen = 1, tag = "   " }
     }
