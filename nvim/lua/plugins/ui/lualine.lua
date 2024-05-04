@@ -49,9 +49,10 @@ require('lualine').setup {
 			{'diff',
       colored = true,
       diff_color = {
-        added    = 'LuaLineDiffAdd',
-        modified = 'LuaLineDiffChange',
-        removed  = 'LuaLineDiffDelete',},
+        added    = {fg = colors.cyan, bg = colors.grey},
+        modified = {fg = colors.cyan, bg = colors.grey},
+        removed  = {fg = colors.cyan, bg = colors.grey}
+				},
       symbols = {added = '+', modified = '~', removed = '-'},
 			source = nil, }
 		},

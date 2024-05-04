@@ -109,7 +109,7 @@ local mycpu = lain.widget.cpu({
 local mymem = lain.widget.mem({
 	timeout = 2,
 	settings = function ()
-	   widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#d08770", "  " .. mem_now.used .. " MiB "))
+	   widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#d08770", "  " .. mem_now.used .. " MiB"))
 	end
 })
 
