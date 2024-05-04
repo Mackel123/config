@@ -26,7 +26,8 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       800px;
+    width:                       600px;
+    height:                      260px;
     x-offset:                    0px;
     y-offset:                    0px;
     margin:                      0px;
@@ -99,7 +100,7 @@ textbox {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     6;
+    columns:                     5;
     lines:                       1;
     cycle:                       true;
     scrollbar:                   false;
@@ -122,7 +123,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "feather 28";
+    font:                        "feather 15";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

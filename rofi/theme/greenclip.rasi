@@ -36,7 +36,7 @@ mainbox {
     enabled:                     true;
     spacing:                     10px;
     margin:                      0px;
-    padding:                     20px;
+    padding:                     25px;
     background-color:            transparent;
     children:                    [ "inputbar", "listview" ];
 }
@@ -51,7 +51,7 @@ inputbar {
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
-    children:                    [  "prompt"];
+    children:                    [  "prompt","entry"];
 }
 
 prompt {
@@ -60,6 +60,18 @@ prompt {
     border-radius:               0px;
     background-color:            @active;
     text-color:                  @background;
+}
+
+entry  {
+    enabled:                     true;
+		padding:                     5px  2px;
+		border-radius:               2px;
+		placeholder:                 "clipboard...";
+		text-color:                  @foreground;
+		background-color:            @background-alt;
+		placeholder-color:           "#4c566aFF";
+		vertical-align:              0.5;
+		horizontal-align:            0.02;
 }
 
 /*****----- Listview -----*****/

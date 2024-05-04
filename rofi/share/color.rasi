@@ -4,7 +4,7 @@
  * Github : @adi1090x
  * 
  * Colors
- **/
+**/
 
 * {
     background:     #2E3440FF;
@@ -14,3 +14,4 @@
     active:         #A3BE8CFF;
     urgent:         #BF616AFF;
 }
+

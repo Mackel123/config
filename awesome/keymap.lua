@@ -54,6 +54,13 @@ awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("pactl set-s
          {description = "decrease volume", group = "alsa control"}),
 awful.key({ }, "XF86AudioMute", function () awful.util.spawn("pactl set-sink-mute 0 toggle") end,
          {description = "mute/unmute toggle", group = "alsa control"}),
+--lockscreen
+awful.key({"Control" , "Mod1" }, "l", function () awful.util.spawn("/usr/bin/i3lock-fancy-dualmonitor") end,
+        {description = "lockscreen", group = "client"}),
+--networkmanager
+awful.key({modkey , "Mod1" }, "n", function () awful.util.spawn("networkmanager_dmenu") end,
+        {description = "networkmanager", group = "client"}),
+
 
 --Application keymap
 awful.key({"Control", modkey }, "w", function () awful.util.spawn("firefox") end,
@@ -89,6 +96,7 @@ awful.key({"Control", "Mod1"}, "r", function () awful.util.spawn("kitty -e range
 awful.key({"Control", "Mod1"}, "y", function () awful.util.spawn("kitty -e yazi") end,
         {description = "open yazi with kitty", group = "TUI Application"}),
 
+
 --rofi
 awful.key({modkey, }, "s", function () awful.util.spawn_with_shell("~/.config/rofi/bin/screenshot.sh") end,
         {description = "screenshot", group = "rofi"}),
@@ -104,11 +112,6 @@ awful.key({modkey, }, "p", function () awful.util.spawn_with_shell("~/.config/ro
         {description = "launcher", group = "rofi"}),
 awful.key({modkey, }, "g", function () awful.util.spawn_with_shell("~/.config/rofi/bin/greenclip.sh") end,
         {description = "copyclip", group = "rofi"}),
-awful.key({"Control" , "Mod1" }, "l", function () awful.util.spawn("/usr/bin/i3lock-fancy-dualmonitor") end,
-        {description = "lockscreen", group = "client"}),
-
-
-
 
 --screenshot keymap
 awful.key({ }, "Print", function () awful.util.spawn_with_shell("~/.config/awesome/scripts/screenshot.sh --now") end,
@@ -122,15 +125,7 @@ awful.key({"Control","Mod1" }, "Print", function () awful.util.spawn_with_shell(
 awful.key({"Control", "Shift"}, "Print", function () awful.util.spawn_with_shell("~/.config/awesome/scripts/screenshot.sh --in10") end,
         {description = "screenshot in 10s", group = "screenshot"}),
 
-
-
 })
-
-
-
-
-
-
 
 -- Tags related keybindings
 awful.keyboard.append_global_keybindings({

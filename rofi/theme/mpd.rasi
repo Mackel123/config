@@ -1,7 +1,7 @@
 /**
  *
  * Author : Aditya Shakya (adi1090x)
- * Github : @adi1090x
+ *Github : @adi1090x
  * 
  * Rofi Theme File
  * Rofi Version: 1.7.3
@@ -15,12 +15,12 @@ configuration {
 /*****----- Global Properties -----*****/
 * {
     font:                        "JetBrains Mono Nerd Font 10";
-    background:                  #11092D;
-    background-alt:              #281657;
-    foreground:                  #FFFFFF;
-    selected:                    #DF5296;
-    active:                      #6E77FF;
-    urgent:                      #8E3596;
+    background:                  #3b4252;
+    background-alt:              #4c566a;
+    foreground:                  #d8dee9;
+    selected:                    #d08770;
+    active:                      #bf616a;
+    urgent:                      #b48ead;
 }
 
 /*
@@ -64,7 +64,7 @@ inputbar {
     border-radius:               0px;
     border-color:                @selected;
     background-color:            transparent;
-    background-image:            url("~/.config/rofi/share/images/a.png", width);
+    background-image:            url("/home/mackelzhang/.config/rofi/share/images/1059875.jpg", width);
     text-color:                  @foreground;
     children:                    [ "textbox-prompt-colon", "prompt"];
 }
@@ -75,7 +75,7 @@ dummy{
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "";
+		str:                         " ";
     padding:                     10px 13px;
     border-radius:               0px;
     background-color:            @urgent;

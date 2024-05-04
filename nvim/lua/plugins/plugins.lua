@@ -27,13 +27,13 @@ return {
     init = function()
       vim.g.startuptime_tries = 10
     end,
-  },
-  {  "hrsh7th/nvim-cmp", event = "InsertEnter",  dependencies = {   "hrsh7th/cmp-nvim-lsp",   "hrsh7th/cmp-buffer",  }, },
-  { "L3MON4D3/LuaSnip",	build = "make install_jsregexp" },
-  { "rafamadriz/friendly-snippets" },
+},
+{  "hrsh7th/nvim-cmp", event = "InsertEnter",  dependencies = {   "hrsh7th/cmp-nvim-lsp",   "hrsh7th/cmp-buffer",  }, },
+{ "L3MON4D3/LuaSnip",	build = "make install_jsregexp" },
+{ "rafamadriz/friendly-snippets" },
 
-  {  'windwp/nvim-autopairs',  event = "InsertEnter",config = true  },
-	'brenoprata10/nvim-highlight-colors',
+{  'windwp/nvim-autopairs',  event = "InsertEnter",config = true  },
+    'brenoprata10/nvim-highlight-colors',
 
  --nvim treesitter
   {
@@ -70,9 +70,9 @@ return {
   { dir = "~/projects/secret.nvim" },
 
 --bufferline
-  {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
-  {'romgrk/barbar.nvim', dependencies = { 'lewis6991/gitsigns.nvim',  'nvim-tree/nvim-web-devicons',  },
-    init = function() vim.g.barbar_auto_setup = false end,  },
+ {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+ {'romgrk/barbar.nvim', dependencies = { 'lewis6991/gitsigns.nvim',  'nvim-tree/nvim-web-devicons',  },
+   init = function() vim.g.barbar_auto_setup = false end,  },
 --nvim statusbar
   "nvim-lualine/lualine.nvim",
 	'arkav/lualine-lsp-progress',
@@ -177,5 +177,5 @@ return {
     	},
         dependencies = {   "nvim-lua/plenary.nvim",  },
         keys = {  { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } }
-	}
+	},
 }
