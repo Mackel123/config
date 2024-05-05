@@ -24,8 +24,8 @@ beautiful.init(gears.filesystem.get_configuration_dir() .. "theme/nord/nord.lua"
 terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
-filemanager = terminal .. " -e" .. "ranger"
-musicplayer = terminal .. " -e" .. "ncmpcpp"
+filemanager = terminal .. " -e " .. "ranger"
+musicplayer = terminal .. " -e " .. "ncmpcpp"
 
 require("wibar")
 

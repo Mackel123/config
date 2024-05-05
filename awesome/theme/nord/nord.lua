@@ -57,15 +57,12 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 )
 
 -- Variables set for theming notifications:
-theme.notification_font = "JetBrainsMonoNL  Nerd Font 10"
 theme.notification_bg = "#3b4252"
 theme.notifacition_fg = "#d8dee9"
 theme.notification_width = 300
 theme.notification_height = 80
-theme.notification_margin = 3
 theme.notification_border_color = "#5e81ac"
-theme.notification_border_width = 2
-theme.notification_shape = "rectangle"
+theme.notification_border_width = 5
 theme.notification_opacity = 0.6
 
 -- Variables set for theming the menu:
