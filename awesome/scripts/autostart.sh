@@ -7,7 +7,7 @@ function run {
   fi
 }
 
-run picom --config ~/.config/awesome/scripts/picom.conf
+run picom --animations -b --config ~/.config/awesome/scripts/picom.conf
 run fcitx5
 run nitrogen --restore
 run /usr/lib/xfce-polkit/xfce-polkit

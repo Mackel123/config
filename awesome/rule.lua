@@ -75,7 +75,7 @@ ruled.client.connect_signal("request::rules", function()
         properties = { screen = 1, tag = "   " }
     }
     ruled.client.append_rule {
-        rule_any   = { class = {"Audacity" , "mpv","Dopamine","deadbeef" ,"Darktable" ,"HandBrake" ,"spotify", "RawTherapee" ,"vlc"} },
+        rule_any   = { class = {"Audacity" , "mpv","Dopamine","Deadbeef" ,"Darktable" ,"HandBrake" ,"spotify", "RawTherapee" ,"vlc"} },
         properties = { screen = 1, tag = " 󰕧  " }
     }
     ruled.client.append_rule {

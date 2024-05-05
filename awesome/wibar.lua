@@ -136,6 +136,8 @@ local mynetup = lain.widget.net({
 
 local mympd = lain.widget.mpd({
 	timeout = 3,
+	followtag = true,
+	music_dir = "~/disk/Music",
 	settings = function ()
 	   mpd_notification_preset = {
                    title   = "Now playing",
@@ -145,7 +147,7 @@ local mympd = lain.widget.mpd({
                    }
               if mpd_now.state == "play" then
                   artist = " " .. mpd_now.artist .. " "
-                  title  = mpd_now.title  .. " "
+                  title  = mpd_now.track  .. " "
               elseif mpd_now.state == "pause" then
                   artist = " mpd "
                   title  = "paused "
