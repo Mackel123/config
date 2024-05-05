@@ -17,12 +17,12 @@ fi
 
 # notify and view screenshot
 notify_view () {
-	notify_cmd_shot='dunstify -u low -h string:x-dunst-stack-tag:obscreenshot -i /usr/share/archcraft/icons/dunst/picture.png'
-	${notify_cmd_shot} "Copied to clipboard."
+	notify_cmd_shot='notify-send -h string:x-dunst-stack-tag:obscreenshot -i ~/.config/awesome/theme/nord/notify/picture/icons8-picture-250.png'
+	${notify_cmd_shot} "Copied to clipboard."  
 	paplay /usr/share/sounds/freedesktop/stereo/screen-capture.oga &>/dev/null &
 	viewnior ${dir}/"$file"
 	if [[ -e "$dir/$file" ]]; then
-		${notify_cmd_shot} "Screenshot Saved."
+		${notify_cmd_shot} "Screenshot Saved."   
 	else
 		${notify_cmd_shot} "Screenshot Deleted."
 	fi
@@ -36,7 +36,7 @@ copy_shot () {
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i /usr/share/archcraft/icons/dunst/timer.png "Taking shot in : $sec"
+		notify-send -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i ~/.config/awesome/theme/nord/notify/time/clock.png "Taking shot in : $sec"
 		sleep 1
 	done
 }

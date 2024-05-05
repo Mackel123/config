@@ -137,7 +137,6 @@ local mynetup = lain.widget.net({
 local mympd = lain.widget.mpd({
 	timeout = 3,
 	followtag = true,
-	music_dir = "~/disk/Music",
 	settings = function ()
 	   mpd_notification_preset = {
                    title   = "Now playing",

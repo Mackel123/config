@@ -44,9 +44,9 @@ awful.keyboard.append_global_keybindings({
 awful.keyboard.append_global_keybindings({
 awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end,
          {description = "mpc toggle" , group = "mpd service"}),
-awful.key({"Control" }, "p", function () awful.util.spawn("mpc next") end,
+awful.key({"Control" }, "n", function () awful.util.spawn("mpc next") end,
          {description = "mpc next" , group = "mpd service"}),
-awful.key({"Control" }, "n", function () awful.util.spawn("mpc prev") end,
+awful.key({"Control" }, "p", function () awful.util.spawn("mpc prev") end,
          {description = "mpc prev", group  = "mpd service"}),
 awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("pactl set-sink-volume 0 +5%") end,
          {description = "increase volume", group = "alsa control"}),
