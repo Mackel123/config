@@ -95,14 +95,14 @@ mytextclock = wibox.widget.textclock()
 local alsavolume = lain.widget.alsa({
 	timeout = 3,
 	settings = function()
-	    widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#b48ead", " " .. volume_now.level .."%" ))
+	    widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#b48ead", " " .. volume_now.level .."% " ))
 	end
 })
 
 local mycpu = lain.widget.cpu({
 	timeout = 2,
 	settings = function ()
-           widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#bf616a", "󰻠" .. cpu_now.usage .."%"))
+           widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#bf616a", " " .. cpu_now.usage .."%"))
 	end
 })
 
@@ -155,7 +155,7 @@ local mympd = lain.widget.mpd({
                   artist = ""
                   title  = ""
               end
-	    widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#3b4252",artist)..markup.fontfg("JetBrainsMonoNL Nerd Font", "#5e81ac",title))
+	    widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font" , "#bf616a", "  ") ..markup.fontfg("JetBrainsMonoNL Nerd Font", "#3b4252",artist)..markup.fontfg("JetBrainsMonoNL Nerd Font", "#5e81ac",title))
 	end
 })
 
@@ -217,7 +217,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             awful.button({ }, 3, function() awful.menu.client_list { theme = { width = 250 } } end),
             awful.button({ }, 4, function() awful.client.focus.byidx(-1) end),
             awful.button({ }, 5, function() awful.client.focus.byidx( 1) end),
-        }
+        },
     }
 
     -- Create the wibox
@@ -243,14 +243,13 @@ screen.connect_signal("request::desktop_decoration", function(s)
 	          mynetup,
 	          m_sep,
 	          alsavolume,
+	          wibox.container.background(mympd,"#a3be8c"),
 	          m_sep,
 	          myweather,
 	          m_sep,
 	          mycpu,
 	          m_sep,
 	          mymem,
-	          m_sep,
-	          wibox.container.background(mympd,"#a3be8c"),
             m_sep,
 		        mytextclock,
 		        mr_sep,
