@@ -102,14 +102,14 @@ local alsavolume = lain.widget.alsa({
 local mycpu = lain.widget.cpu({
 	timeout = 2,
 	settings = function ()
-           widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#bf616a", "󰻠 " .. cpu_now.usage .."%"))
+           widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#bf616a", "󰻠" .. cpu_now.usage .."%"))
 	end
 })
 
 local mymem = lain.widget.mem({
 	timeout = 2,
 	settings = function ()
-	   widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#d08770", "  " .. mem_now.used .. " MiB"))
+	   widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#d08770", " " .. mem_now.used .. " MiB"))
 	end
 })
 
@@ -130,7 +130,7 @@ local mynetup = lain.widget.net({
 	units = 1024^3,
 	eth_state = "on",
 	settings = function ()
-	   widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#5e81ac", " " .. net_now.sent .."MiB ") .. markup.fontfg("JetBrainsMonoNL Nerd Font", "#ebcb8b", " " .. net_now.received .."MiB "))
+	   widget:set_markup(markup.fontfg("JetBrainsMonoNL Nerd Font", "#5e81ac", " " .. net_now.sent .."MiB ") .. markup.fontfg("JetBrainsMonoNL Nerd Font", "#ebcb8b", " " .. net_now.received .."MiB"))
 	end
 })
 
@@ -147,7 +147,7 @@ local mympd = lain.widget.mpd({
                    }
               if mpd_now.state == "play" then
                   artist = " " .. mpd_now.artist .. " "
-                  title  = mpd_now.track  .. " "
+                  title  = mpd_now.title  .. " "
               elseif mpd_now.state == "pause" then
                   artist = " mpd "
                   title  = "paused "
@@ -238,8 +238,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
             { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
 		        l_sep,
-            mykeyboardlayout,
-		        m_sep,
             wibox.widget.systray(),
 	          m_sep,
 	          mynetup,

@@ -22,7 +22,7 @@ map("t", "<C-l>", "<cmd>wincmd l<CR>")
 
 map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
 map("n", "<leader>l", "<cmd>Lazy<CR>")
-map("n", "<leader>w", "<cmd>WhichKey<CR>")
+map("n", "C-w", "<cmd>WhichKey<CR>")
 map("n", "<leader>r", "<cmd>RnvimrToggle<CR>")
 
 -- telescope

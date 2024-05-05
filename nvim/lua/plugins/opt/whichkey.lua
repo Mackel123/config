@@ -32,8 +32,8 @@ wk.setup({
     scroll_down = "<c-d>",    scroll_up = "<c-u>", 
   },
   window = {
-    border = "none",
-		position = "bottom", 
+    border = "single",
+		position = "top", 
     margin = { 1, 0, 1, 0 }, 
     padding = { 1, 2, 1, 2 }, 
     winblend = 0,
