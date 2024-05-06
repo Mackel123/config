@@ -142,7 +142,7 @@ local mympd = lain.widget.mpd({
                    title   = "Now playing",
                    timeout = 6,
                    text    = string.format("%s (%s) - %s\n%s", mpd_now.artist,
-                             mpd_now.album, mpd_now.date, mpd_now.title)
+                             mpd_now.album, mpd_now.date, mpd_now.title, mpd_now.pls_len, mpd_now.genre)
                    }
               if mpd_now.state == "play" then
                   artist = " " .. mpd_now.artist .. " "

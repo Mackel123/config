@@ -21,6 +21,15 @@ ruled.client.connect_signal("request::rules", function()
             placement = awful.placement.no_overlap+awful.placement.no_offscreen
         }
     }
+	  ruled.client.append_rule {
+		   id           = "corrent tiling window for mpv",
+		   rule         ={class = "mpv" },
+		   properties   =  { 
+			      size_hints_honor = false,
+			      border_width     = 5, 
+			      border_color     = "#bf616a",
+		   }
+	  }
 
     -- Floating clients.
     ruled.client.append_rule {
