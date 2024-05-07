@@ -2254,5 +2254,9 @@ config.bind('Y', 'prompt-accept --save yes', mode='yesno')
 config.bind('n', 'prompt-accept no', mode='yesno')
 config.bind('y', 'prompt-accept yes', mode='yesno')
 
+
+## Bindings for kepassxc connection
+config.bind('<Alt-Shift-u>','spawn --userscript qute-keepassxc --key 80DC2ED9F0C067C23D95C7B02935B55054E8D55C',mode='insert' )
+config.bind('<Alt-Shift-v>','spawn --userscript qute-keepassxc --key 80DC2ED9F0C067C23D95C7B02935B55054E8D55C',mode='normal' )
 ## nord-qutebrowser
 config.source('nord-qutebrowser.py')
