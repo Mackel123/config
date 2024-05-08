@@ -75,8 +75,8 @@ ruled.client.connect_signal("request::rules", function()
          properties = { screen = 1, tag = "   " }
      }
   	ruled.client.append_rule {
-        rule_any   = { class = {"Atril" , "masterpdfeditor4","LibreOffice", "libreoffice-writer", "libreoffice-calc",
-			                 "libreoffice-impress", "libreoffice-startcenter", "libreoffice", "*:libreofficedev"} },
+        rule_any   = { class = {"Atril" , "masterpdfeditor4","LibreOffice", "Libreoffice Writer", "Libreoffice Calc",
+			                 "Libreoffice Impress", "Libreoffice Startcenter",  "*:libreofficedev", "Soffice", "*:soffice"} },
         properties = { screen = 1, tag = " 󰏆  " }
   	}
   	ruled.client.append_rule {
@@ -88,7 +88,7 @@ ruled.client.connect_signal("request::rules", function()
         properties = { screen = 1, tag = " 󰕧  " }
     }
     ruled.client.append_rule {
-        rule_any  = { class = { "Inkscape" ,"Gimp-2.10", "Blender", "resolve" ," Fusion", "kdenlive","REAPER" ,"krita" } },
+        rule_any  = { class = { "Inkscape" ,"Gimp-2.10", "Blender", "resolve" ," Fusion", "kdenlive","REAPER" ,"krita" ,"opentoonz"} },
         properties = { screen = 1, tag = " 󰨜  " }
     }
     ruled.client.append_rule {

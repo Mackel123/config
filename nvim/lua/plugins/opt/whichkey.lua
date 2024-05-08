@@ -12,7 +12,7 @@ wk.setup({
       operators = true,
 			motions = true,
 			text_objects = true,
-      windows = true,      
+      windows = true,
 			nav = true,
       z = true,
       g = true,
@@ -33,7 +33,7 @@ wk.setup({
   },
   window = {
     border = "single",
-		position = "top", 
+		position = "bottom", 
     margin = { 1, 0, 1, 0 }, 
     padding = { 1, 2, 1, 2 }, 
     winblend = 0,
