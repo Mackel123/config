@@ -36,17 +36,17 @@ run_rofi() {
 
 # Execute Command
 run_cmd() {
-	polkit_cmd="pkexec env PATH=$PATH DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY"
+	askpass="$HOME/.config/rofi/bin/awesomewm_askpass"
 	if [[ "$1" == '--opt1' ]]; then
-		${polkit_cmd} alacritty
+		${askpass} alacritty
 	elif [[ "$1" == '--opt2' ]]; then
-		${polkit_cmd} dbus-run-session thunar
+		${askpass} "dbus-run-session thunar"
 	elif [[ "$1" == '--opt3' ]]; then
-		${polkit_cmd} geany
+		${askpass} sgeany
 	elif [[ "$1" == '--opt4' ]]; then
-		${polkit_cmd} alacritty -e ranger
+		${askpass} "alacritty -e ranger"
 	elif [[ "$1" == '--opt5' ]]; then
-		${polkit_cmd} alacritty -e vim
+		${askpass} "alacritty -e vim"
 	fi
 }
 
