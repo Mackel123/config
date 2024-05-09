@@ -88,7 +88,7 @@ ruled.client.connect_signal("request::rules", function()
         properties = { screen = 1, tag = " 󰕧  " }
     }
     ruled.client.append_rule {
-        rule_any  = { class = { "Inkscape" ,"Gimp-2.10", "Blender", "resolve" ," Fusion", "kdenlive","REAPER" ,"krita" ,"opentoonz"} },
+        rule_any  = { class = { "Inkscape" ,"Gimp-2.10", "Blender", "resolve" ," Fusion", "kdenlive","REAPER" ,"krita" ,"0penToonz"} },
         properties = { screen = 1, tag = " 󰨜  " }
     }
     ruled.client.append_rule {
