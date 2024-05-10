@@ -20,7 +20,7 @@ map("t", "<C-j>", "<cmd>wincmd j<CR>")
 map("t", "<C-k>", "<cmd>wincmd k<CR>")
 map("t", "<C-l>", "<cmd>wincmd l<CR>")
 
-map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
+map("n", "<leader>n", "<cmd>Neotree<CR>")
 map("n", "<leader>l", "<cmd>Lazy<CR>")
 map("n", "C-w", "<cmd>WhichKey<CR>")
 map("n", "<leader>r", "<cmd>RnvimrToggle<CR>")

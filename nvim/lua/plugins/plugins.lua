@@ -99,20 +99,25 @@ return {
       vim.g.rnvimr_pick_enable = 1
       vim.g.rnvimr_bw_enable = 1
     end,  },
+	{ "nvim-neo-tree/neo-tree.nvim", branch = "v3.x",
+    dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons",  "MunifTanjim/nui.nvim",  "3rd/image.nvim", } } ,
   {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
-  lazy = false,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
-  config = function()
-    require("nvim-tree").setup {
-      view = {  width = 30, },
-      renderer = {  group_empty = true, },
-      filters = { dotfiles = true, },}
-  end,
-},
+    's1n7ax/nvim-window-picker',
+    name = 'window-picker',
+    event = 'VeryLazy',
+    version = '2.*',
+    config = function()
+        require'window-picker'.setup({
+				  filter_rules = {
+					  include_current_win = false,
+					  autoselect_one      = true,
+					  bo = {
+						   filetype = {'neo-tree','neo-tree-popup','notify'},
+						   buftype  = {'terminal','quickfix'},
+					  }
+				  }
+			  })
+    end, },
 --nvimlspconfig
   {
   "folke/lsp-colors.nvim",
