@@ -40,6 +40,16 @@ theme.border_marked = "#ebcb8b"
 -- tooltip_[font|opacity|fg_color|bg_color|border_width|border_color]
 -- mouse_finder_[color|timeout|animate_timeout|radius|factor]
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
+theme.hotkeys_bg = "#2E3440"
+theme.hotkeys_fg = "#D8DEE9"
+theme.hotkeys_mpodfiers_fg = "#D08770"
+theme.hotkeys_border_width = dpi(10)
+theme.hotkeys_border_color = "#5E81AC"
+theme.hotkeys_opacity = 0.7
+theme.hotkeys_font = "ComicShannsMono Nerd Font 10"
+theme.hotkeys_description_font = "JetBrainsMonoNL Nerd Font 10"
+
+
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
 theme.taglist_bg_focus = "#ebcb8b"
@@ -63,7 +73,7 @@ theme.notification_width = 300
 theme.notification_height = 80
 theme.notification_border_color = "#5e81ac"
 theme.notification_border_width = 5
-theme.notification_opacity = 0.6
+theme.notification_opacity = 0.7
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]

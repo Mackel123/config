@@ -24,10 +24,15 @@ require("toggleterm").setup{
 	persist_mode = true,
 	float_opts = {
     border = "single",
-		width = 96,
-		height = 10,
+		width = 120,
+		height = 36,
 		winlend = 3,
 		title_pos = "left",
-
+	},
+	wibar = {
+		enabled = true,
+		    name_formatter = function(term) --  term: Terminal
+      return term.name
+    end
 	}
 }

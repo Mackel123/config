@@ -178,4 +178,16 @@ return {
         dependencies = {   "nvim-lua/plenary.nvim",  },
         keys = {  { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } }
 	},
+	{
+  "hedyhli/outline.nvim",
+  config = function()
+    -- Example mapping to toggle outline
+    vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
+      { desc = "Toggle Outline" })
+
+    require("outline").setup {
+      -- Your setup opts here (leave empty to use defaults)
+    }
+  end,
+  },
 }

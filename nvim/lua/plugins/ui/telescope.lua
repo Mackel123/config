@@ -9,6 +9,22 @@ telescope.load_extension "media_files"
 
 telescope.setup {
   defaults = {
+		layout_config = {
+			height =  0.99,
+			width  =  0.99,
+			horizontal = { preview_width = 0.7 }
+		},
+
+	border = {
+    prompt = { 1, 1, 1, 1 },
+    results = { 1, 1, 1, 1 },
+    preview = { 1, 1, 1, 1 },
+  },
+  borderchars = {
+    prompt = { " ", " ", "─", "│", "│", " ", "─", "└" },
+    results = { "─", " ", " ", "│", "┌", "─", " ", "│" },
+    preview = { "─", "│", "─", "│", "┬", "┐", "┘", "┴" },
+  },
 
     prompt_prefix = "  ",
     selection_caret = " ",

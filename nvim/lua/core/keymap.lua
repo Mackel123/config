@@ -24,6 +24,7 @@ map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
 map("n", "<leader>l", "<cmd>Lazy<CR>")
 map("n", "C-w", "<cmd>WhichKey<CR>")
 map("n", "<leader>r", "<cmd>RnvimrToggle<CR>")
+map("n", "<leader>a", "<cmd>Outline<CR>")
 
 -- telescope
 local builtin = require('telescope.builtin')
