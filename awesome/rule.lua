@@ -37,7 +37,7 @@ ruled.client.connect_signal("request::rules", function()
         rule_any = {
             instance = { "copyq", "pinentry" },
             class    = {
-                "Arandr", "Blueman-manager", "Gpick", "Kruler", "Sxiv","TelegramDesktop","Dopamine","HandBrake",
+                "Arandr", "Blueman-manager", "Gpick", "Kruler", "Sxiv","TelegramDesktop","Dopamine","HandBrake","flameshot",
                 "Tor Browser", "Wpa_gui", "veromix", "xtightvncviewer","Pavucontrol","discord","Artil","mpv","Audacity",
 								"thunar","Thunderbird","Viewnior", "lxappearance","lxtask","vlc", "deadbeef","libreoffice-startcenter",
 				        "Geany","firefox:firefox","firefox:Firefox"

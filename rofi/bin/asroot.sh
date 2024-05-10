@@ -8,7 +8,6 @@
 theme='~/.config/rofi/theme/asroot.rasi'
 # Theme Elements
 prompt='Applications'
-mesg='Run Applications as Root'
 
 
 # Options
@@ -24,7 +23,6 @@ layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
 rofi_cmd() {
 	rofi -dmenu \
 		-p "$prompt" \
-		-mesg "$mesg" \
 		-markup-rows \
 		-theme ${theme}
 }

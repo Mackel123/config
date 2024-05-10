@@ -10,25 +10,6 @@ theme='~/.config/rofi/theme/screen.rasi'
 
 # Theme Elements
 prompt='Screenshot'
-mesg="DIR: `xdg-user-dir PICTURES`/Screenshots"
-
-if [[ "$theme" == *'type-1'* ]]; then
-	list_col='1'
-	list_row='5'
-	win_width='400px'
-elif [[ "$theme" == *'type-3'* ]]; then
-	list_col='1'
-	list_row='5'
-	win_width='120px'
-elif [[ "$theme" == *'type-5'* ]]; then
-	list_col='1'
-	list_row='5'
-	win_width='520px'
-elif [[ ( "$theme" == *'type-2'* ) || ( "$theme" == *'type-4'* ) ]]; then
-	list_col='5'
-	list_row='1'
-	win_width='670px'
-fi
 
 # Options
 layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
@@ -36,21 +17,20 @@ if [[ "$layout" == 'NO' ]]; then
 	option_1="󰢹 Capture Desktop"
 	option_2=" Capture Area"
 	option_3=" Capture Window"
-	option_4=" Capture in 5s"
+	option_4="󰔝 Capture in 3s"
 	option_5="󰔜 Capture in 10s"
 else
-	option_1=" 󰢹 "
-	option_2="  "
-	option_3="  "
-	option_4="  "
-	option_5=" 󰔜 "
+	option_1="󰢹 "
+	option_2=" "
+	option_3=" "
+	option_4="󰔝 "
+	option_5="󰔜 "
 fi
 
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
 		-p "$prompt" \
-		-mesg "$mesg" \
 		-markup-rows \
 		-theme ${theme}
 }
@@ -72,7 +52,7 @@ fi
 
 # notify and view screenshot
 notify_view() {
-	notify_cmd_shot='dunstify -u low --replace=699'
+	notify_cmd_shot='notify-send -u low --replace-id 699'
 	${notify_cmd_shot} "Copied to clipboard."
 	viewnior ${dir}/"$file"
 	if [[ -e "$dir/$file" ]]; then
@@ -90,7 +70,7 @@ copy_shot () {
 # countdown
 countdown () {
 	for sec in `seq $1 -1 1`; do
-		dunstify -t 1000 --replace=699 "Taking shot in : $sec"
+		notify-send -t 1000 --replace-id 699 "Taking shot in : $sec"
 		sleep 1
 	done
 }
@@ -101,8 +81,8 @@ shotnow () {
 	notify_view
 }
 
-shot5 () {
-	countdown '5'
+shot3 () {
+	countdown '3'
 	sleep 1 && cd ${dir} && maim -u -f png | copy_shot
 	notify_view
 }
@@ -132,7 +112,7 @@ run_cmd() {
 	elif [[ "$1" == '--opt3' ]]; then
 		shotwin
 	elif [[ "$1" == '--opt4' ]]; then
-		shot5
+		shot3
 	elif [[ "$1" == '--opt5' ]]; then
 		shot10
 	fi
