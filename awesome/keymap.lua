@@ -124,6 +124,9 @@ awful.key({"Control","Mod1" }, "Print", function () awful.util.spawn_with_shell(
         {description = "screenshot in 5s", group = "screenshot"}),
 awful.key({"Control", "Shift"}, "Print", function () awful.util.spawn_with_shell("~/.config/awesome/scripts/screenshot.sh --in10") end,
         {description = "screenshot in 10s", group = "screenshot"}),
+awful.key({"Mod1", "Shift"}, "Print", function () awful.util.spawn_with_shell("flameshot gui") end,
+        {description = "screenshot in 10s", group = "screenshot"}),
+
 
 })
 
