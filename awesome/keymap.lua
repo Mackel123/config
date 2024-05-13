@@ -55,7 +55,7 @@ awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("pactl set-s
 awful.key({ }, "XF86AudioMute", function () awful.util.spawn("pactl set-sink-mute 0 toggle") end,
          {description = "mute/unmute toggle", group = "alsa control"}),
 --lockscreen
-awful.key({"Control" , "Mod1" }, "l", function () awful.util.spawn("/usr/bin/i3lock-fancy-dualmonitor") end,
+awful.key({"Control" , "Mod1" }, "l", function () awful.util.spawn("/usr/bin/i3lock-fancy") end,
         {description = "lockscreen", group = "client"}),
 --networkmanager
 awful.key({modkey , "Mod1" }, "n", function () awful.util.spawn("networkmanager_dmenu") end,

@@ -1,5 +1,6 @@
 local opt = vim.opt
 local g = vim.g
+local o =vim.o
 
 opt.number = true
 opt.mouse = "a"
@@ -16,14 +17,14 @@ opt.wrap = true
 g.netrw_banner  = 0
 g.netrw_winsize = 30
 
-
-
 g.nord_contrast = true
 g.nord_borders = false
 g.nord_disable_background = false
 g.nord_italic = false
 g.nord_uniform_diff_background = true
 g.nord_bold = true
+
+o.mousemoveevent = true
 
 require('nord').set()
 

@@ -20,8 +20,9 @@ map("t", "<C-j>", "<cmd>wincmd j<CR>")
 map("t", "<C-k>", "<cmd>wincmd k<CR>")
 map("t", "<C-l>", "<cmd>wincmd l<CR>")
 
-map("n", "<leader>n", "<cmd>Neotree<CR>")
+map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
 map("n", "<leader>l", "<cmd>Lazy<CR>")
+map("n", "<leader>ps", [[<cmd>lua require("lazy").update(opts)<CR>]])
 map("n", "C-w", "<cmd>WhichKey<CR>")
 map("n", "<leader>r", "<cmd>RnvimrToggle<CR>")
 map("n", "<leader>a", "<cmd>Outline<CR>")
@@ -35,6 +36,7 @@ map('n', '<leader>fh', builtin.help_tags, {})
 map("n", "<space>fb", function()
 	require("telescope").extensions.file_browser.file_browser()
 end)
+map("n", "<Leader>fr", [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]])
 
 --barbar
 map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)

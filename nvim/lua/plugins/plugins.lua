@@ -70,7 +70,7 @@ return {
   { dir = "~/projects/secret.nvim" },
 
 --bufferline
- {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+ {'akinsho/bufferline.nvim', dependencies = 'nvim-tree/nvim-web-devicons'},
  {'romgrk/barbar.nvim', dependencies = { 'lewis6991/gitsigns.nvim',  'nvim-tree/nvim-web-devicons',  },
    init = function() vim.g.barbar_auto_setup = false end,  },
 --nvim statusbar
@@ -89,7 +89,7 @@ return {
      dependencies = {  "MunifTanjim/nui.nvim", "rcarriga/nvim-notify",  }},
 --nvim floating term
 	{'akinsho/toggleterm.nvim', version = "*", config = true},
-  {  "utilyre/barbecue.nvim", name = "barbecue",  version = "*",  dependencies = { "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons",   },},
+  {  "utilyre/barbecue.nvim", name = "barbecue",  dependencies = { "SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons",   },},
   { 'b0o/incline.nvim',  event = 'VeryLazy',},
 --nvim filebrowser
   { "kevinhwang91/rnvimr",
@@ -99,8 +99,15 @@ return {
       vim.g.rnvimr_pick_enable = 1
       vim.g.rnvimr_bw_enable = 1
     end,  },
-	{ "nvim-neo-tree/neo-tree.nvim", branch = "v3.x",
-    dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons",  "MunifTanjim/nui.nvim",  "3rd/image.nvim", } } ,
+	{ "nvim-tree/nvim-tree.lua",
+       lazy = false,
+       dependencies = {
+         "nvim-tree/nvim-web-devicons",
+       },
+       config = function()
+         require("nvim-tree").setup {}
+       end,
+  },
   {
     's1n7ax/nvim-window-picker',
     name = 'window-picker',
@@ -152,7 +159,7 @@ return {
   "nvim-lua/plenary.nvim",
 
   --telescope
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.6',
+  { 'nvim-telescope/telescope.nvim',
      dependencies = { 'nvim-lua/plenary.nvim' ,    'mollerhoj/telescope-recent-files.nvim',}  },
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },
   {
@@ -161,38 +168,56 @@ return {
   },
   {'prochri/telescope-all-recent.nvim',
   dependencies = {
-    "nvim-telescope/telescope.nvim",
-    "kkharji/sqlite.lua",
-    "stevearc/dressing.nvim"  } },
-	'nvim-telescope/telescope-ui-select.nvim',
-	'nvim-lua/popup.nvim',
-	'nvim-telescope/telescope-media-files.nvim',
-	{
-    "iamcco/markdown-preview.nvim",
+  "nvim-telescope/telescope.nvim",
+  "kkharji/sqlite.lua",
+  "stevearc/dressing.nvim"  } },
+  'nvim-telescope/telescope-ui-select.nvim',
+  'nvim-lua/popup.nvim',
+  'nvim-telescope/telescope-media-files.nvim',
+  "smartpde/telescope-recent-files",
+  {"iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
    },
-	{ "kdheepak/lazygit.nvim",cmd = {
-    		"LazyGit",
-    		"LazyGitConfig",
-    		"LazyGitCurrentFile",
-    		"LazyGitFilter",
-    		"LazyGitFilterCurrentFile",
-    	},
-        dependencies = {   "nvim-lua/plenary.nvim",  },
-        keys = {  { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } }
-	},
-	{
-  "hedyhli/outline.nvim",
-  config = function()
-    -- Example mapping to toggle outline
+  { "kdheepak/lazygit.nvim",cmd = {
+	"LazyGit",
+	"LazyGitConfig",
+	"LazyGitCurrentFile",
+	"LazyGitFilter",
+	"LazyGitFilterCurrentFile",},
+    dependencies = {   "nvim-lua/plenary.nvim",  },
+    keys = {  { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } }
+  },
+  { "hedyhli/outline.nvim",
+    config = function()
     vim.keymap.set("n", "<leader>o", "<cmd>Outline<CR>",
       { desc = "Toggle Outline" })
 
     require("outline").setup {
-      -- Your setup opts here (leave empty to use defaults)
     }
   end,
+  },
+	"sindrets/diffview.nvim",
+	{  "soulis-1256/eagle.nvim",
+		config = function ()
+			require("eagle").setup({
+				border = "single",
+				border_color = "#5e81ac",
+        close_on_cmd = true,
+				debug_mode = false,
+				detect_idle_timer = 50,
+				max_height_factor = 2.5,
+				max_width_factor  = 2,
+				render_delay = 500,
+				scrollbar_offset = 0,
+				show_lsp_info = true,
+				title = "  ",
+				title_color = "#bf616a",
+				title_pos   = "center",
+				window_col = 5,
+				window_row = 0,
+			})
+		end
   },
 }

@@ -31,7 +31,7 @@ dashboard.section.buttons.val = {
     dashboard.button("<Leader>fb", "  File Explorer"),
     dashboard.button("<Leader>ff", "󰛔  Find File"),
     dashboard.button("<Leader>fr", "  Recent File"),
-    dashboard.button("<Leader>fw", "  Find Word"),
+    dashboard.button("<Leader>fg", "  Find Word"),
     dashboard.button("<Leader>ps", "  Update plugins"),
     dashboard.button("q",          "  Quit", ":qa<cr>")
 }
