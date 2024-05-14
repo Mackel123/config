@@ -232,5 +232,45 @@ return {
     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
   },
-}
+},
+ {
+	"supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({
+   		  keymaps = {
+          accept_suggestion = "<Tab>",
+          clear_suggestion = "<C-]>",
+          },
+        ignore_filetypes = { cpp = true },
+        color = {
+          suggestion_color = "#ffffff",
+          cterm = 244,}
+   	  })
+    end,
+  },
+	{
+  'gorbit99/codewindow.nvim',
+  config = function()
+    local codewindow = require('codewindow')
+    codewindow.setup({
+			active_in_terminals = false,
+      auto_enable = true,
+      exclude_filetypes = { 'help' },
+      max_minimap_height = nil,
+      max_lines = nil,
+      minimap_width = 20,
+      use_lsp = true,
+      use_treesitter = true,
+      use_git = true,
+      width_multiplier = 4,
+      z_index = 1,
+      show_cursor = true,
+      screen_bounds = 'background',
+      window_border = 'none',
+      relative = 'win',
+			vents = { 'TextChanged', 'InsertLeave', 'DiagnosticChanged', 'FileWritePost' } 
+			})
+    codewindow.apply_default_keybinds()
+  end,
+  }
 }
