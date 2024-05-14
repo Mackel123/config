@@ -27,9 +27,9 @@ require("lazy").setup(
 			missing = true,
 		},
 		ui = {
-			size = {width = 0.75,height = 0.75},
+			size = {width = 0.9,height = 0.9},
 			wrap = true,
-			border = "none",
+			border = "solid",
 			backrop = 60,
 			title = nil,
 			title_pos = "center",
