@@ -1,0 +1,218 @@
+{
+	"layer":"top",
+	"position":"top",
+	"height":31,
+	"spacing":10,
+	"modules-left":[
+		 "custom/launcher",
+		 "custom/diskicon",
+		 "disk",
+		 "niri/workspaces",
+		 "niri/window",
+		 "custom/pacman"
+	 ],
+	 "modules-center":[
+		 "custom/wayves"
+	 ],
+	 "modules-right":[
+		 "custom/lyrics",
+		 "privacy",
+		 "pulseaudio",
+		 "mpd",
+		 "cpu",
+		 "memory",
+		 "network",
+		 "clock",
+		 "tray"
+	 ],
+  "niri/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "terminal":" ",
+      "browser":"󱫋 ",
+			"filemanager":" ",
+      "code":"󰨞 ",
+      "media":"󰤛 ",
+      "editor":" ",
+      "chat":" ",
+      "book":" ",
+      "systemsettings":" ",
+			"active": "󰄯 ",
+      "focused": "  "
+    }
+	},
+  "niri/window": {
+    "format": "{}",
+    "max-length": 30,
+    "all-outputs" : true,
+    "offscreen-css" : true,
+    "offscreen-css-text": "(inactive)",
+    "rewrite": {
+        "(.*) - Mozilla Firefox": " $1",
+        "(.*) - fish": "> [$1]"
+    }
+	},
+   "custom/launcher":{
+     "format": "  ",
+		 "on-click" : "~/.config/rofi/bin/launcher.sh"
+	 },
+
+	 "cpu": {
+		 "interval": 5,
+		 "format": "  {usage}% [{icon0} {icon1} {icon2} {icon3} {icon4} {icon5} {icon6} {icon7}]",
+		 "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+		 "on-click": "kitty htop"
+
+	 },
+	 "memory": {
+      "interval": 5,
+			"format": "󰍛 {percentage}%"
+	 },
+	 "network": {
+    	"format": "{ifname}",
+    	"format-ethernet": "   [ {bandwidthUpBits}  {bandwidthDownBits}]",
+    	"format-disconnected": "󰣼 ",
+    	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
+    	"format-linked": "󰈁 {ifname} (No IP)",
+    	"tooltip-format-ethernet": "{ifname}  {ipaddr} ",
+    	"tooltip-format-disconnected": "󰌙 Disconnected",
+    	"max-length": 30,
+    	"format-icons": [
+    		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
+	    ],
+	    "on-click-right": "networkmanager_dmenu"
+	 },
+	 "mpd": {
+      "format":"[{elapsedTime:%M:%S}|{totalTime:%M:%S}] {stateIcon} {artist} - {album} - {title} ",
+			"format-disconnected": "󰣼 ",
+			"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+      "interval": 10,
+      "consume-icons": {
+         "on": " "     },
+      "random-icons": {
+        "off": "<span color=\"#a3be8c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+         },
+      "repeat-icons": {
+        "on": " "
+        },
+      "single-icons": {
+        "on": "1 "
+        },
+      "state-icons": {
+        "paused": "",
+        "playing": ""
+        },
+			"album-len": 5,
+			"title-len": 10,
+			"artist-len": 3,
+			"max-length": 40,
+      "tooltip-format": "MPD (connected)",
+      "tooltip-format-disconnected": "MPD (disconnected)",
+			"on-click-right": "kitty rmpc",
+			"on-click": "mpc toggle"
+	 },
+   "clock": {
+       "timezone": "Asia/Shanghai",
+       "format": "{:%H:%M %Z} ",
+       "format-alt": "{:%a, %b %d %C%y} ",
+       "tooltip": false,
+       "on-click-right": "thunderbird"
+   },
+	 "tray" : {
+		 "icon-size": 20,
+		 "spacing" : 10
+	 },
+   
+   "pulseaudio": {
+       "format": "{volume}% {icon}",
+       "format-bluetooth": "{volume}% {icon}",
+       "format-muted": "",
+       "format-icons": {
+           "alsa_output.pci-0000_00_1f.3.analog-stereo": "  ",
+           "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "  ",
+           "headphone": " ",
+           "hands-free": " ",
+           "headset": " ",
+           "phone": " ",
+           "phone-muted": " ",
+           "portable": " ",
+           "car": " ",
+           "default": ["", " "]
+       },
+       "scroll-step": 1,
+       "on-click": "pavucontrol",
+       "ignored-sinks": ["Easy Effects Sink"]
+   },
+	 "disk": {
+		 "interval": 5,
+		 "format": "{percentage_free}% [{used}]",
+		 "path": "/"
+	 },
+	 "custom/diskicon" : {
+		 "format":"<span color=\"#5e81ac\"> 󱛟 </span>",
+		 "on-click": "kitty ncdu"
+	 },
+	 "custom/weather":{
+	   "format": "{}",
+     "tooltip": true,
+     "interval": 3600,
+     "exec": "~/.config/waybar/weather.py",
+     "return-type": "json"
+   },
+	"privacy": {
+  	"icon-spacing": 4,
+  	"icon-size": 14,
+  	"transition-duration": 250,
+  	"modules": [
+  		{
+  			"type": "screenshare",
+  			"tooltip": true,
+  			"tooltip-icon-size": 24
+  		},
+  		{
+  			"type": "audio-out",
+  			"tooltip": true,
+  			"tooltip-icon-size": 24
+  		},
+  		{
+  			"type": "audio-in",
+  			"tooltip": true,
+  			"tooltip-icon-size": 24
+  		}
+  	]
+   },
+   "custom/wayves":{
+		 "format":"{}",
+		 "exec":"python ~/.config/waybar/wayves/wayves.py -o cava -a cava",
+	 },
+	"custom/pacman": {
+    "format": "{icon}{0}",
+    "return-type": "json",
+    "format-icons": {
+        "pending-updates": " ",
+        "updated": ""
+       },
+    "exec-if": "which waybar-updates",
+    "exec": "waybar-updates"
+   },
+  "custom/lyrics": {
+    "return-type": "json",
+    "format": "{icon} {0}",
+    "hide-empty-text": true,
+    "format-icons": {
+      "playing": "",
+      "paused": "",
+      "lyric": "",
+      "music": "󰝚",
+      "no_lyric": "",
+      "getting": ""
+      },
+    "exec-if": "which waybar-lyric",
+    "exec": "waybar-lyric --quiet",
+    "on-click": "waybar-lyric play-pause"
+     }
+	 
+}

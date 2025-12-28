@@ -1,0 +1,188 @@
+* {
+	border: 1px #2e3440;
+  border-radius: 0px;
+	font-family: JetBrains Mono,Comic Mono,Source Han Sans;
+	font-size: 12px;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+window#waybar.empty {
+  background-color: transparent;
+}
+
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+/*  background-color: rgba(66,66,66,0.5); */ /* transparent */
+  background-color: transparent;
+}
+
+window#waybar.solo #window {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #eee8d5; /* base2 */
+    background-color: #073642; /*base02*/
+}
+
+window#waybar.floating #window {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #eee8d5; /* base2 */
+    background-color: #b58900; /*yellow*/
+}
+
+window#waybar.tiled #window {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #eee8d5; /* base2 */
+    background-color: #cb4b16; /* orange */
+
+}
+window#waybar.stacked #window {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #eee8d5; /* base2 */
+    background: #2aa196; /*cyan*/
+}
+window#waybar.tabbed #window {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #eee8d5; /* base2 */
+    background: #859900; /*green*/
+}
+
+window#waybar.code {
+    background-color: #007ACC;
+}
+
+#tooltip {
+	background-color: #2e3440;
+}
+
+#workspaces button {
+	padding: 0 10px;
+	background-color: #3b4252;
+	color: #e5e9f0;
+	margin: 2px;
+}
+
+#workspaces button.focused {
+    background-color: #ebcb8b;
+		color: #2e3440;
+}
+
+#workspaces button.visible {
+		background-color: #a3be8c;
+		color: #2e3440;
+}
+
+#network {
+	padding: 0 10px;
+	color: #5e81ac;
+	border: 5px;
+}
+
+#mpd {
+	color: #2e3440;
+	background-image:url("cover.jpg"), url("cover.png");
+	background-color: #bf616a;
+	border: 2px;
+	margin: 2px;
+}
+
+#cpu {
+	padding: 5px;
+	color: #a3be8c;
+}
+
+#memory {
+	padding: 5px;
+	color: #ebcb8b;
+}
+
+#clock {
+	padding: 0 10px;
+	background-color: #5e81ac;
+	border: 5px #2e3440;
+	margin:2px;
+}
+
+#custom-launcher {
+	padding: 5px 0px;
+	font-size: 15px;
+	color: #6CAAE0;
+}
+#pulseaudio {
+	padding: 0 10px;
+	color: #5e81ac;
+	background-color: #ebcb8b;
+	border: 5px;
+	margin: 2px;
+}
+#disk {
+	padding-left:10px;
+	padding-right:10px;
+	margin: 5px;
+	background-color: #191D24;
+	color: #B74E58;
+	font-family: JetBrains Mono;
+}
+
+#custom-diskicon {
+  padding-left:10px;
+	padding-right:0px;
+	font-family: JetBrains Mono;
+  }
+
+#privacy {
+	padding: 0 10px;
+	color: #b48ead;
+}
+#custom-wayves {
+	color: #5e81ac;
+}
+#custom-audio_idle_inhibitor {
+		color: #bf616a;
+		font-family: JetBrains Mono;
+	}
+
+  
+	#cava.updated {
+	animation:pluse 0.2s ease-in-out;
+	}
+@keyframes pluse {
+		0% { opacity: 1; }
+		50% { opacity:0.8; }
+		100% { opacity:0.3; }
+	}
+@keyframes blink-update {
+	to {
+		background-color: dodgerblue;
+	}
+}
+
+#custom-pacman {
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+#custom-pacman.pending-updates {
+	animation-name: blink-update;
+	animation-duration: 3s;
+	padding:3px 3px;
+	margin:2px
+}
+
+#custom-lyrics {
+  color: #1db954;
+  margin: 0 5px;
+  padding: 0 10px;
+}
+
+#custom-lyrics.paused {
+  color: #aaaaaa; /* Set custom color when paused */
+}

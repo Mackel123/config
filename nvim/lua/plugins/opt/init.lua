@@ -1,0 +1,8 @@
+require("plugins.opt.autocommands")
+require("plugins.opt.autopairs")
+require("plugins.opt.cmp")
+require("plugins.opt.treesitter")
+require("plugins.opt.colorhightlight")
+require("plugins.opt.whichkey")
+require("plugins.opt.incline")
+require("plugins.opt.image")
