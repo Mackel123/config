@@ -7,8 +7,8 @@
 **/
 
 * {
-    background:     rgba(46, 52, 64, 0.95);
-    background-alt: rgba(46, 52, 64, 0);
+    background:     #2e3440FF;
+    background-alt: #3b4252FF;
     foreground:     #E5E9F0FF;
     selected:       #81A1C1FF;
     active:         #A3BE8CFF;

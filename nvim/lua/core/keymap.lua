@@ -64,3 +64,6 @@ map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
 map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
 map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
 
+--keymap split and vsplit
+map('n', '<leader>p', ':split<CR>')
+map('n', '<leader>v', ':vsplit<CR>')

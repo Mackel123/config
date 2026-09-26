@@ -81,6 +81,7 @@ for_window [app_id=".*"] opacity $opacity
 for_window [app_id="firefox"] opacity 1.0
 for_window [class="firefox"] opacity 1.0
 for_window [app_id="kitty"] floating enable
+for_window [app_id="org.gnome.Nautilus"] floating enable
 for_window [class="kitty"] floating enable
 for_window [class="Google-chrome"] opacity 1.0
 for_window [app_id="google-chrome"] opacity 1.0
@@ -134,7 +135,7 @@ for_window [class="kitty"] border pixel 5
 for_window [app_id="fr.handbrake.ghb"] floating enable
 
 #notification
-layer_effects "mako" {
+layer_effects "swaync" {
     blur enable;
 		opacity 0.5;
 }
@@ -242,7 +243,71 @@ exec wl-paste --watch cliphist store
 		set $ws8 " "
 		set $ws9 " "
 		set $ws10 "󱤙 "
-    # Switch to workspace
+		#automatically assign workspace
+		#workspace terminal
+		assign [class="kitty"] $ws1
+		#workspace browser
+		assign [app_id="firefox"] $ws2
+		assign [app_id="qutebrowser"] $ws2
+		assign [app_id="google-chrome"] $ws2
+		assign [app_id="helium"] $ws2
+		assign [app_id="qbittorrent"] $ws2
+    #workspace file manager
+		assign [app_id="pcmanfm-qt"] $ws3
+	  #workspace code
+    assign [app_id="code"] $ws4
+		assign [app_id="vscode"] $ws4
+		assign [app_id="sublime_text"] $ws4
+		assign [app_id="libreoffice-startcenter"] $ws4
+		assign [app_id="libreoffice-writer"] $ws4
+		assign [app_id="libreoffice-calc"] $ws4
+		assign [app_id="libreoffice-draw"] $ws4
+		assign [app_id="libreoffice-impress"] $ws4
+		assign [app_id="libreoffice-base"] $ws4
+	  #workspace media
+		assign [app_id="vlc"] $ws5
+		assign [app_id="mpv"] $ws5
+		assign [app_id="obs-studio"] $ws5
+		assign [app_id="mpc-qt"] $ws5
+		assign [app_id="spotify"] $ws5
+		assign [app_id="fooyin"] $ws5
+		assign [app_id="lx-music-desktop"] $ws5
+		#workspace editor
+		assign [app_id="inkscape"] $ws6
+		assign [app_id="gimp"] $ws6
+		assign [app_id="krita"] $ws6
+		assign [app_id="blender"] $ws6
+		assign [app_id="kdenlive"] $ws6
+		assign [app_id="audacity"] $ws6
+		assign [app_id="darktable"] $ws6
+		assign [app_id="resolve"]	$ws6
+		assign [app_id="OpenToonz"] $ws6
+		#workspace chat
+		assign [app_id="org.telegram.desktop"] $ws7
+		assign [app_id="discord"] $ws7
+		assign [app_id="slack"] $ws7
+		assign [app_id="vesktop"] $ws7
+		assign [app_id="qq"] $ws7
+		assign [app_id="wechat"] $ws7
+		#workspace book
+		assign [app_id="calibre"] $ws8
+		assign [app_id="foliate"]	$ws8
+		assign [app_id="zathura"]	$ws8
+		assign [app_id="YACReader"] $ws8
+			#workspace systemsettings
+		assign [app_id="nwg-look"] $ws9
+		assign [app_id="qt6ct"] $ws9
+		assign [app_id="qt5ct"]	$ws9
+		assign [app_id="localsend"] $ws9
+		assign [app_id="kvantummanager"] $ws9
+		assign [app_id="pavucontrol"] $ws9
+		assign [app_id="easyeffects"] $ws9
+		assign [app_id="vsfetch"] $ws9
+		#workspace game
+		assign [app_id="steam"]	$ws10
+		assign [app_id="protonplus"] $ws10
+		assign [app_id="lutris"] $ws10
+		# Switch to workspace
     bindsym $mod+1 workspace $ws1
     bindsym $mod+2 workspace $ws2
     bindsym $mod+3 workspace $ws3 
@@ -331,7 +396,9 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
     bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
     bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
-
+		bindsym --locked XF86AudioPlay exec playerctl play-pause
+		bindsym --locked XF86AudioNext exec playerctl next
+		bindsym --locked XF86AudioPrev exec playerctl previous
 	
 
 #gap
@@ -360,7 +427,7 @@ bar {
     }
 #autostart
 exec_always swaybg -m fill -i  ~/Pictures/Wallpaper/IMG_2545_upscayl_4x_upscayl-standard-4x.png
-exec_always mako
+exec swaync
 exec_always autotiling -w 1 3 5 7 9
 exec_always ~/.config/sway/scripts/autostart.sh
 

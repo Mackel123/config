@@ -1,11 +1,10 @@
 {
 	"layer":"top",
 	"position":"top",
-	"height":31,
+	"height":20,
 	"spacing":5,
 	"modules-left":[
 		 "custom/launcher",
-		 "custom/diskicon",
 		 "disk",
 		 "hyprland/workspaces",
 		 "hyprland/window",
@@ -19,40 +18,52 @@
 		 "custom/lyrics",
 		 "privacy",
 		 "pulseaudio",
-		 "mpd",
+		 "custom/music",
 		 "cpu",
 		 "memory",
 		 "network",
 		 "clock",
 		 "tray"
 	 ],
-	 "hyprland/window": {
-    "format": " {}",
-    "rewrite": {
-        "(.*) — Mozilla Firefox": " $1",
-				"(.*) - vim": " $1",
-				"(.*) - nvim": " $1",
-				"(.*) - ranger": " $1",
-				"(.*) - fish": " $1"
-    },
-    "separate-outputs": true,
-		"max-length": 40
+"hyprland/window": {
+  "format": "{}",
+  "separate-outputs": true,
+	"max-length": 40,
+	"rewrite": {
+			"^(.*)(- Mozilla Firefox)$": "  $1",
+			"^(.*)(- Helium)$": "󰖟 $1",
+			"^(.*)(- qutebrowser)$": "󰊯 $1",
+			"Mozilla Firefox": " ",
+      "~(.*)": "> [$1]",
+			"vim": " ",
+			"vim (.*)": " $1",
+			"nvim (.*)": " $1",
+			"nvim": " ",
+			"ranger:(.*)": " $1",
+			"kitty:(.*)": " $1",
+			"yazi:(.*)": " $1",
+			"rmpc": " ",
+			"ncmpcpp": " ",
+			"^(.*) \\[fooyin\\]":"󱍚 $1",
+			"fooyin":"󱍚 ",
+			"(.*) - mpv":"󰎁 $1"
+    }
    },
 
 "hyprland/workspaces": {
-  "format": "{icon} | {windows}",
+  "format": "{icon}",
   "format-window-separator": " ",
   "format-icons": {
-      "1":" ",
-      "2":" ",
-			"3":" ",
-      "4":"󰨞 ",
-      "5":"󰤛 ",
-      "6":" ",
-      "7":" ",
-      "8":" ",
-      "9":" ",
-      "10":"󱤙 "
+      "1":"  ",
+      "2":"  ",
+			"3":"  ",
+      "4":" 󰨞 ",
+      "5":" 󰤛 ",
+      "6":"  ",
+      "7":"  ",
+      "8":"  ",
+      "9":"  ",
+      "10":" 󱤙 "
  	 },
   "window-rewrite-default": " ",
   "window-rewrite": {
@@ -132,7 +143,7 @@
        "on-click-right": "thunderbird"
    },
 	 "tray" : {
-		 "icon-size": 20,
+		 "icon-size": 15,
 		 "spacing" : 10
 	 },
    
@@ -144,21 +155,22 @@
            "alsa_output.pci-0000_00_1f.3.analog-stereo": "  ",
            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "  ",
            "headphone": " ",
-           "hands-free": " ",
-           "headset": " ",
+           "hands-free": "󰋌 ",
+           "headset": "󰋎 ",
            "phone": " ",
            "phone-muted": " ",
            "portable": " ",
            "car": " ",
            "default": ["", " "]
        },
+			 "format-icons-color": "#5e81ac",
        "scroll-step": 1,
        "on-click": "pavucontrol",
        "ignored-sinks": ["Easy Effects Sink"]
    },
 	 "disk": {
 		 "interval": 5,
-		 "format": "{percentage_free}% [{used}]",
+		 "format": "󱛟 {percentage_free}% [{used}]",
 		 "path": "/"
 	 },
 	 "custom/diskicon" : {
@@ -204,7 +216,7 @@
     "return-type": "json",
     "format-icons": {
         "pending-updates": " ",
-        "updated": ""
+        "updated": " "
        },
     "exec-if": "which waybar-updates",
     "exec": "waybar-updates"
@@ -216,14 +228,21 @@
     "format-icons": {
       "playing": "",
       "paused": "",
-      "lyric": "",
-      "music": "󰝚",
-      "no_lyric": "",
-      "getting": ""
+      "lyric": " ",
+      "music": "󰝚 ",
+      "no_lyric": " ",
+      "getting": " "
       },
     "exec-if": "which waybar-lyric",
     "exec": "waybar-lyric --quiet",
     "on-click": "waybar-lyric play-pause"
-     }
-	 
+     },
+	 "custom/music": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-music -m --effect-speed 150 -a 10 -t 15 ",
+		"on-click": "kitty -e rmpc",
+		"on-click-right": "playerctl play-pause"
+  }
+
 }

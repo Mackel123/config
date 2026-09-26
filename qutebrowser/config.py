@@ -672,11 +672,12 @@ c.colors.webpage.darkmode.enabled = True
 ## extracting it from the `location` parameter of the subscribe URL and
 ## URL-decoding it).
 ## Type: List of Url
-# c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt']
-
+c.content.blocking.adblock.lists = [
+     'https://easylist.to/easylist/easylist.txt',
+     'https://easylist.to/easylist/easyprivacy.txt']
 ## Enable the ad/host blocker
 ## Type: Bool
-# c.content.blocking.enabled = True
+c.content.blocking.enabled = True
 
 ## Block subdomains of blocked hosts. Note: If only a single subdomain is
 ## blocked but should be allowed, consider using
@@ -707,7 +708,7 @@ c.colors.webpage.darkmode.enabled = True
 ##   - adblock: Use Brave's ABP-style adblocker
 ##   - hosts: Use hosts blocking
 ##   - both: Use both hosts blocking and Brave's ABP-style adblocker
-# c.content.blocking.method = 'auto'
+c.content.blocking.method = 'adblock'
 
 ## A list of patterns that should always be loaded, despite being blocked
 ## by the ad-/host-blocker. Local domains are always exempt from
@@ -792,7 +793,7 @@ c.colors.webpage.darkmode.enabled = True
 
 ## Try to pre-fetch DNS entries to speed up browsing.
 ## Type: Bool
-# c.content.dns_prefetch = True
+c.content.dns_prefetch = True
 
 ## Expand each subframe to its contents. This will flatten all the frames
 ## to become one scrollable page.
@@ -802,12 +803,12 @@ c.colors.webpage.darkmode.enabled = True
 ## Set fullscreen notification overlay timeout in milliseconds. If set to
 ## 0, no overlay will be displayed.
 ## Type: Int
-# c.content.fullscreen.overlay_timeout = 3000
+c.content.fullscreen.overlay_timeout = 3000
 
 ## Limit fullscreen to the browser window (does not expand to fill the
 ## screen).
 ## Type: Bool
-# c.content.fullscreen.window = False
+c.content.fullscreen.window = False
 
 ## Allow websites to request geolocations.
 ## Type: BoolAsk
@@ -895,7 +896,7 @@ c.colors.webpage.darkmode.enabled = True
 
 ## Enable JavaScript.
 ## Type: Bool
-# c.content.javascript.enabled = True
+c.content.javascript.enabled = True
 
 ## Enables the legacy touch event feature. This affects JS APIs such as:
 ## - ontouch* members on window, document, Element -
@@ -1510,7 +1511,7 @@ c.colors.webpage.darkmode.enabled = True
 ## Whether the underlying Chromium should handle media keys. On Linux,
 ## disabling this also disables Chromium's MPRIS integration.
 ## Type: Bool
-# c.input.media_keys = True
+c.input.media_keys = False
 
 ## Mode to change to when focusing on a tab/URL changes.
 ## Type: String
@@ -1625,7 +1626,7 @@ c.colors.webpage.darkmode.enabled = True
 ## https://peter.sh/experiments/chromium-command-line-switches/ for a
 ## list) will work.
 ## Type: List of String
-# c.qt.args = []
+c.qt.args = ['ignore-gpu-blocklist', 'enable-gpu-rasterization', 'enable-accelerated-video-decode', 'enable-quic', 'enable-zero-copy']
 
 ## Enables Web Platform features that are in development. This passes the
 ## `--enable-experimental-web-platform-features` flag to Chromium. By
@@ -1890,7 +1891,7 @@ c.colors.webpage.darkmode.enabled = True
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
-# c.tabs.background = True
+c.tabs.background = True
 
 ## Mouse button with which to close tabs.
 ## Type: String
@@ -1930,11 +1931,11 @@ c.colors.webpage.darkmode.enabled = True
 
 ## Padding (in pixels) for tab indicators.
 ## Type: Padding
-# c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
+c.tabs.indicator.padding = {'top': 2, 'bottom': 2, 'left': 0, 'right': 4}
 
 ## Width (in pixels) of the progress indicator (0 to disable).
 ## Type: Int
-# c.tabs.indicator.width = 3
+c.tabs.indicator.width = 3
 
 ## How to behave when the last tab is closed. If the
 ## `tabs.tabs_are_windows` setting is set, this is ignored and the
@@ -1954,7 +1955,7 @@ c.colors.webpage.darkmode.enabled = True
 ## not apply properly if max_width is smaller than the minimum size of
 ## tab contents, or smaller than tabs.min_width.
 ## Type: Int
-# c.tabs.max_width = -1
+## c.tabs.max_width = -1
 
 ## Minimum width (in pixels) of tabs (-1 for the default minimum size
 ## behavior). This setting only applies when tabs are horizontal. This
@@ -2099,7 +2100,7 @@ c.tabs.tabs_are_windows = False
 ## Width (in pixels or as percentage of the window) of the tab bar if
 ## it's vertical.
 ## Type: PercOrInt
-# c.tabs.width = '15%'
+c.tabs.width = '7%'
 
 ## Wrap when changing tabs.
 ## Type: Bool

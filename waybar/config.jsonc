@@ -16,6 +16,7 @@
 	 ],
 	 "modules-right":[
 		 "custom/lyrics",
+		 "custom/weather",
 		 "privacy",
 		 "pulseaudio",
 		 "mpd",
@@ -23,7 +24,8 @@
 		 "memory",
 		 "network",
 		 "clock",
-		 "tray"
+		 "tray",
+		 "custom/notification"
 	 ],
   "sway/workspaces": {
     "disable-scroll": true,
@@ -52,9 +54,25 @@
     "all-outputs" : true,
     "offscreen-css" : true,
     "offscreen-css-text": "(inactive)",
-    "rewrite": {
-        "(.*) - Mozilla Firefox": " $1",
-        "(.*) - fish": "> [$1]"
+			"rewrite": {
+			"^(.*)(- Mozilla Firefox)$": "  $1",
+			"^(.*)(- Helium)$": "󰖟 $1",
+			"^(.*)(- qutebrowser)$": "󰊯 $1",
+			"Mozilla Firefox": " ",
+      "~(.*)": "> [$1]",
+			"vim": " ",
+			"vim (.*)": " $1",
+			"nvim (.*)": " $1",
+			"nvim": " ",
+			"ranger:(.*)": " $1",
+			"kitty:(.*)": " $1",
+			"yazi:(.*)": " $1",
+			"rmpc": " ",
+			"ncmpcpp": " ",
+			"^(.*) \\[fooyin\\]":"󱍚 $1",
+			"fooyin":"󱍚 ",
+			"steam":" ",
+			"(.*) - mpv":"󰎁 $1"
     }
 	},
    "custom/launcher":{
@@ -158,14 +176,7 @@
 		 "format":"<span color=\"#5e81ac\"> 󱛟 </span>",
 		 "on-click": "kitty ncdu"
 	 },
-	 "custom/weather":{
-	   "format": "{}",
-     "tooltip": true,
-     "interval": 3600,
-     "exec": "~/.config/waybar/weather.py",
-     "return-type": "json"
-   },
-	"privacy": {
+   "privacy": {
   	"icon-spacing": 4,
   	"icon-size": 14,
   	"transition-duration": 250,
@@ -189,7 +200,7 @@
    },
    "custom/wayves":{
 		 "format":"{}",
-		 "exec":"python ~/.config/waybar/wayves/wayves.py -o cava -a cava",
+		 "exec":"python ~/.config/waybar/wayves/wayves.py -o cava -a cava"
 	 },
 	"custom/pacman": {
     "format": "{icon}{0}",
@@ -216,6 +227,32 @@
     "exec-if": "which waybar-lyric",
     "exec": "waybar-lyric --quiet",
     "on-click": "waybar-lyric play-pause"
-     }
-	 
+     },
+		 "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫 ",
+      "none": "󰂜 ",
+      "dnd-notification": "󰂠 ",
+      "dnd-none": "󰪓 ",
+      "inhibited-notification": "󰂛 ",
+      "inhibited-none": "󰪑 ",
+      "dnd-inhibited-notification": "󰂛 ",
+      "dnd-inhibited-none": "󰪑 "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+	"custom/weather": {
+    "format": "{}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Chongqing,CN",
+    "return-type": "json"	 
+  }
 }

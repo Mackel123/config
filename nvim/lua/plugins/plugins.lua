@@ -1,11 +1,17 @@
 return {
 
 --nvim theme
-{'shaunsingh/nord.nvim',
-		config = function ()
-			vim.cmd[[colorscheme nord]]
-	end
-},
+{ "gbprod/nord.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("nord").setup({})
+      vim.cmd.colorscheme("nord")
+    end,
+  },
+  install = {
+    colorscheme = { "nord" },
+  },
 --nvim config
 {  "folke/which-key.nvim",  event = "VeryLazy",
   init = function()
@@ -36,20 +42,7 @@ return {
     'brenoprata10/nvim-highlight-colors',
 
  --nvim treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function ()
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
-          sync_install = false,
-          highlight = { enable = true },
-          indent = { enable = true },
-        })
-    end
-  },
+  {"nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"},
   {  "JoosepAlviste/nvim-ts-context-commentstring", event = "BufRead",},
   "mrjones2014/nvim-ts-rainbow",
   { "romgrk/nvim-treesitter-context",
@@ -198,11 +191,6 @@ return {
   'nvim-lua/popup.nvim',
   'nvim-telescope/telescope-media-files.nvim',
   "smartpde/telescope-recent-files",
-  {"iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-   },
  {
    "3rd/image.nvim",
    build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239

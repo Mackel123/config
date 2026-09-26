@@ -1,8 +1,8 @@
 {
 	"layer":"top",
 	"position":"top",
-	"height":31,
-	"spacing":10,
+	"height":25,
+	"spacing":5,
 	"modules-left":[
 		 "custom/launcher",
 		 "custom/diskicon",
@@ -18,29 +18,30 @@
 		 "custom/lyrics",
 		 "privacy",
 		 "pulseaudio",
-		 "mpd",
+		 "custom/music",
 		 "cpu",
 		 "memory",
 		 "network",
+		 "custom/weather",
 		 "clock",
 		 "tray"
 	 ],
-  "niri/workspaces": {
+	  "niri/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "terminal":" ",
-      "browser":"󱫋 ",
-			"filemanager":" ",
-      "code":"󰨞 ",
-      "media":"󰤛 ",
-      "editor":" ",
-      "chat":" ",
-      "book":" ",
-      "systemsettings":" ",
-			"active": "󰄯 ",
-      "focused": "  "
+      "terminal":"",
+      "browser":"󱫋",
+			"filemanager":"",
+      "code":"󰨞",
+      "media":"󰤛",
+      "editor":"",
+      "chat":"",
+      "book":"",
+      "systemsettings":"",
+			"active": "󰄯",
+      "focused": ""
     }
 	},
   "niri/window": {
@@ -50,12 +51,27 @@
     "offscreen-css" : true,
     "offscreen-css-text": "(inactive)",
     "rewrite": {
-        "(.*) - Mozilla Firefox": " $1",
-        "(.*) - fish": "> [$1]"
+				"^(.*)(- Mozilla Firefox)$": "  $1",
+				"^(.*)(- Helium)$": "󰖟 $1",
+				"^(.*)(- qutebrowser)$": "󰊯 $1",
+				"Mozilla Firefox": " ",
+        "~(.*)": "> [$1]",
+				"vim": " ",
+				"vim (.*)": " $1",
+				"nvim (.*)": " $1",
+				"nvim": " ",
+				"ranger:(.*)": " $1",
+				"kitty:(.*)": " $1",
+				"yazi:(.*)": " $1",
+				"rmpc": " ",
+				"ncmpcpp": " ",
+				"^(.*) \\[fooyin\\]":"󱍚 $1",
+				"fooyin":"󱍚 ",
+				"(.*) - mpv":"󰎁 $1"
     }
 	},
    "custom/launcher":{
-     "format": "  ",
+     "format": " ",
 		 "on-click" : "~/.config/rofi/bin/launcher.sh"
 	 },
 
@@ -85,7 +101,7 @@
 	    "on-click-right": "networkmanager_dmenu"
 	 },
 	 "mpd": {
-      "format":"[{elapsedTime:%M:%S}|{totalTime:%M:%S}] {stateIcon} {artist} - {album} - {title} ",
+      "format":"[{elapsedTime:%M:%S}|{totalTime:%M:%S}] {stateIcon} {album} - {title} ",
 			"format-disconnected": "󰣼 ",
 			"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
       "interval": 10,
@@ -105,8 +121,8 @@
         "paused": "",
         "playing": ""
         },
-			"album-len": 5,
-			"title-len": 10,
+			"album-len": 4,
+			"title-len": 15,
 			"artist-len": 3,
 			"max-length": 40,
       "tooltip-format": "MPD (connected)",
@@ -116,10 +132,29 @@
 	 },
    "clock": {
        "timezone": "Asia/Shanghai",
-       "format": "{:%H:%M %Z} ",
-       "format-alt": "{:%a, %b %d %C%y} ",
-       "tooltip": false,
-       "on-click-right": "thunderbird"
+       "format": "{:%H:%M %Z}  ",
+       "format-alt": "{:%a, %b %d %C%y}  ",
+       "tooltip-format": "<tt><small>{calendar}</small></tt>", 
+			 "calendar": {
+				 	"mode"             : "year",
+		      "mode-mon-col"     : 3,
+		      "weeks-pos"        : "right",
+		      "first-day-of-week": 1,
+		      "on-scroll"        : 1,
+		      "on-click-right"   : "mode",
+		      "format": {
+		      "months":     "<span color='#ffead3'><b>{}</b></span>",
+		      "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+		      "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+		      "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+		      "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+		      }
+			 },
+       "on-click-right": "thunderbird",
+			 "on-click-forward": "tz_up",
+			 "on-click-backward": "tz_down",
+			 "on-scroll-up": "shift_up",
+			 "on-scroll-down": "shift_down"
    },
 	 "tray" : {
 		 "icon-size": 20,
@@ -152,16 +187,18 @@
 		 "path": "/"
 	 },
 	 "custom/diskicon" : {
-		 "format":"<span color=\"#5e81ac\"> 󱛟 </span>",
+		 "format":"{icon}",
+		 "format-icons":"<span color=\"#5e81ac\"> 󱛟 </span>",
 		 "on-click": "kitty ncdu"
 	 },
 	 "custom/weather":{
-	   "format": "{}",
-     "tooltip": true,
-     "interval": 3600,
-     "exec": "~/.config/waybar/weather.py",
-     "return-type": "json"
-   },
+    "format": "{}",
+    "tooltip": true,
+    "return-type": "json",
+    "exec": "~/.config/niri/waybar/modules/weather/get_weather.rb",
+    "on-click": "~/.config/niri/waybar/modules/weather/get_weather.rb --next", // Cycle views
+    "interval": 900 // Every 15 minutes
+	 },
 	"privacy": {
   	"icon-spacing": 4,
   	"icon-size": 14,
@@ -184,20 +221,22 @@
   		}
   	]
    },
-   "custom/wayves":{
-		 "format":"{}",
-		 "exec":"python ~/.config/waybar/wayves/wayves.py -o cava -a cava",
-	 },
-	"custom/pacman": {
+"custom/wayves":{
+		"format": "{}",
+		"exec": "python ~/.config/hypr/scripts/wayves/wayves.py -o cava -i cava -a cava",
+		"tooltip":false
+	},
+"custom/pacman": {
     "format": "{icon}{0}",
     "return-type": "json",
     "format-icons": {
-        "pending-updates": " ",
-        "updated": ""
-       },
-    "exec-if": "which waybar-updates",
-    "exec": "waybar-updates"
+       "pending-updates": " ",
+       "updated": " "
+     },
+     "exec-if": "which waybar-updates",
+     "exec": "waybar-updates"
    },
+	
   "custom/lyrics": {
     "return-type": "json",
     "format": "{icon} {0}",
@@ -209,10 +248,16 @@
       "music": "󰝚",
       "no_lyric": "",
       "getting": ""
-      },
+     },
     "exec-if": "which waybar-lyric",
     "exec": "waybar-lyric --quiet",
     "on-click": "waybar-lyric play-pause"
-     }
-	 
+   },
+	 "custom/music": {
+    "format": "{}",
+    "return-type": "json",
+    "exec": "waybar-module-music -m --effect-speed 150 -a 10 -t 15 ",
+		"on-click": "kitty -e rmpc",
+		"on-click-right": "playerctl play-pause"
+  }
 }

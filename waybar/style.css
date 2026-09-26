@@ -1,7 +1,7 @@
 * {
 	border: 1px #2e3440;
   border-radius: 0px;
-	font-family: JetBrains Mono,Comic Mono,Source Han Sans;
+	font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif,"Maple Mono SemiBold";
 	font-size: 12px;
 }
 
@@ -185,4 +185,12 @@ window#waybar.code {
 
 #custom-lyrics.paused {
   color: #aaaaaa; /* Set custom color when paused */
+}
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+}
+#custom-weather.sunny {
+  background-color: #ebcb8b;
+	color: #2e3440;
+	margin: 5px;
 }

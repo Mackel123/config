@@ -16,17 +16,7 @@ opt.ignorecase = true
 opt.wrap = true
 g.netrw_banner  = 0
 g.netrw_winsize = 30
-
-g.nord_contrast = true
-g.nord_borders = false
-g.nord_disable_background = false
-g.nord_italic = false
-g.nord_uniform_diff_background = true
-g.nord_bold = true
-
 o.mousemoveevent = true
-
-require('nord').set()
 
 --lazygit
 g.lazygit_floating_window_winblend = 1 -- transparency of floating window

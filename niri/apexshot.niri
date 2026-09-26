@@ -1,0 +1,12 @@
+// ApexShot hotkeys — source this from your config.niri
+binds {
+// ApexShot Hotkeys for Niri
+// Add these to your config.niri binds { ... } block
+
+    "Shift+Super+4" { spawn "/usr/bin/apexshot" "capture area"; } // capture_area
+    "Ctrl+Alt+X" { spawn "/usr/bin/apexshot" "capture crosshair"; } // capture_crosshair
+    "Shift+Super+3" { spawn "/usr/bin/apexshot" "capture screen"; } // capture_screen
+    "Ctrl+Alt+P" { spawn "/usr/bin/apexshot" "show-last-preview"; } // show_last_preview
+    "Ctrl+Alt+R" { spawn "/usr/bin/apexshot" "record ui"; } // open_recording_ui
+    "Ctrl+Alt+Shift+S" { spawn "/usr/bin/apexshot" "record stop"; } // recording_stop_save
+}

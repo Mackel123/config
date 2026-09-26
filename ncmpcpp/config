@@ -1,0 +1,37 @@
+ncmpcpp_directory = ~/.config/ncmpcpp
+
+# MPD
+mpd_host = localhost
+mpd_port = 6600
+mpd_connection_timeout = 5
+
+# Music ncmpcpp
+mpd_music_dir = ~/ArchDisk/Music
+
+# General
+playlist_disable_highlight_delay = 5
+playlist_display_mode = columns
+external_editor = /usr/bin/vim
+allow_for_physical_item_deletion = yes
+
+# Colors
+colors_enabled = yes
+
+# Statusbar
+statusbar_color = white
+
+# Visualzer
+visualizer_data_source = "/tmp/mpd.fifo"
+visualizer_output_name = visualizer
+visualizer_in_stereo = yes
+visualizer_type = spectrum
+
+def_key "delete"
+  delete_playlist_items
+  
+def_key "delete"
+  delete_browser_items
+  
+def_key "delete"
+  delete_stored_playlist
+

@@ -1,0 +1,202 @@
+{
+    "Name": "Default",
+    "Options": {
+        "ApplyWindowSize": true
+    },
+    "Version": 1,
+    "Widgets": [
+        {
+            "SplitterVertical": {
+                "State": "AAAA/wAAAAEAAAACAAAEmgAAABQA/////wEAAAACAA==",
+                "Widgets": [
+                    {
+                        "SplitterVertical": {
+                            "State": "AAAA/wAAAAEAAAACAAAEgQAAABwA/////wEAAAACAA==",
+                            "Widgets": [
+                                {
+                                    "SplitterHorizontal": {
+                                        "State": "AAAA/wAAAAEAAAACAAAEIwAABDcA/////wEAAAABAA==",
+                                        "Widgets": [
+                                            {
+                                                "SplitterVertical": {
+                                                    "State": "AAAA/wAAAAEAAAACAAACWAAAAiIA/////wEAAAACAA==",
+                                                    "Widgets": [
+                                                        {
+                                                            "SplitterHorizontal": {
+                                                                "State": "AAAA/wAAAAEAAAACAAACmgAAAd8A/////wEAAAABAA==",
+                                                                "Widgets": [
+                                                                    {
+                                                                        "ArtworkPanel": {
+                                                                            "CoverAlignment": 132,
+                                                                            "CoverType": 0,
+                                                                            "DoubleClickAction": 1,
+                                                                            "FadeCoverChanges": true,
+                                                                            "FadeDurationMs": 1000,
+                                                                            "KeepAspectRatio": false,
+                                                                            "MiddleClickAction": 3,
+                                                                            "ShowStoppedTrack": true
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "SplitterVertical": {
+                                                                            "State": "AAAA/wAAAAEAAAACAAAAQQAAAfcA/////wEAAAACAA==",
+                                                                            "Widgets": [
+                                                                                {
+                                                                                    "SplitterVertical": {
+                                                                                        "State": "AAAA/wAAAAEAAAACAAAAJgAAACYA/////wEAAAACAA==",
+                                                                                        "Widgets": [
+                                                                                            {
+                                                                                                "SearchBar": {
+                                                                                                    "AutoSearch": true,
+                                                                                                    "SearchMode": 0,
+                                                                                                    "ShowAll": false
+                                                                                                }
+                                                                                            },
+                                                                                            {
+                                                                                                "PlaylistSwitcher": {
+                                                                                                }
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    "SelectionInfo": {
+                                                                                        "AlternatingRows": true,
+                                                                                        "Options": 127,
+                                                                                        "ShowHeader": true,
+                                                                                        "ShowHorizontalScrollbar": false,
+                                                                                        "ShowVerticalScrollbar": true,
+                                                                                        "State": "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbcAAAACAAAAAAAAAAAAAAAAAAAAAGT/////AAAAhAAAAAAAAAACAAAAZAAAAAEAAAAAAAABUwAAAAEAAAACAAAD6AAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=="
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "Lyrics": {
+                                                                "Alignment": 132,
+                                                                "BackgroundColour": "#ff000000",
+                                                                "BaseFont": "LXGW Heart Serif CL,11,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular,0,0",
+                                                                "BottomMargin": 20,
+                                                                "CentreFirstSyncedLine": false,
+                                                                "CentreLastSyncedLine": true,
+                                                                "CurrentLineColour": "#ff00aa7f",
+                                                                "EdgeFadeMode": 3,
+                                                                "EdgeFadeSize": 35,
+                                                                "LeftMargin": 20,
+                                                                "LineFont": "LXGW Heart Serif MN,14,-1,5,400,0,0,0,0,0,0,0,0,0,0,1,Regular,0,0",
+                                                                "LineSpacing": 10,
+                                                                "NoLyricsScript": "[Artist: %artist%$crlf(2)][Album: %album%$crlf(2)]Title: %title%",
+                                                                "PlayedLineColour": "#7f6f6f00",
+                                                                "ProgressFill": 3,
+                                                                "RightMargin": 20,
+                                                                "ScrollDuration": 500,
+                                                                "ScrollMode": 1,
+                                                                "SeekOnClick": true,
+                                                                "ShowScrollbar": true,
+                                                                "TopMargin": 20,
+                                                                "UnplayedLineColour": "#7fb4b45a",
+                                                                "UnsyncedLineColour": "#ff9f9f76",
+                                                                "UseCustomColours": true,
+                                                                "WordFont": "",
+                                                                "WordLineFont": ""
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Playlist": {
+                                                    "Columns": "3|0:2|1|7:2",
+                                                    "HeaderState": "AAAAVXjaY2BgYGFgYNzMwMAQDaWLGMBiDEwMEMAIxMwgMfub9wM371ucbr/1ZIf2ZIFwOH+39Suz8iu5IIUM/4EAAGOFF0I=",
+                                                    "ID": "afdff36b564b406d8414b5742ba53d57",
+                                                    "Preset": 0,
+                                                    "SingleMode": false
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "SplitterHorizontal": {
+                                        "State": "AAAA/wAAAAEAAAACAAAGCAAAAngA/////wEAAAABAA==",
+                                        "Widgets": [
+                                            {
+                                                "SplitterHorizontal": {
+                                                    "State": "AAAA/wAAAAEAAAACAAAA/AAABO0A/////wEAAAABAA==",
+                                                    "Widgets": [
+                                                        {
+                                                            "SplitterHorizontal": {
+                                                                "State": "AAAA/wAAAAEAAAACAAAAnAAAADgA/////wEAAAABAA==",
+                                                                "Widgets": [
+                                                                    {
+                                                                        "PlayerControls": {
+                                                                            "ShowNext": true,
+                                                                            "ShowPause": false,
+                                                                            "ShowPlay": false,
+                                                                            "ShowPlayPause": true,
+                                                                            "ShowPrevious": true,
+                                                                            "ShowRandomTrack": false,
+                                                                            "ShowStop": true
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        "PlaylistControls": {
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "SeekBar": {
+                                                                "ShowLabels": true,
+                                                                "ShowPlayedThreshold": false,
+                                                                "ShowRemainingTime": false
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "VolumeControls": {
+                                                    "Mode": 3
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "VUMeter": {
+                            "BarSections": 1,
+                            "BarSize": 0,
+                            "BarSpacing": 1,
+                            "ChannelSpacing": 1,
+                            "FalloffTime": 13,
+                            "Orientation": 1,
+                            "PeakFalloffTime": 13,
+                            "PeakHoldTimeMs": 1500,
+                            "SectionSpacing": 1,
+                            "ShowBottomLabels": false,
+                            "ShowLeftLabels": false,
+                            "ShowPeaks": false,
+                            "ShowRightLabels": false,
+                            "ShowTopLabels": false,
+                            "UpdateFps": 40,
+                            "UseCustomColours": false
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "WindowSize": {
+        "Height": 1202,
+        "Width": 2150
+    }
+}
