@@ -1,49 +1,52 @@
 # Take a look at the mako manpage with the command:
 #   man 5 mako
 # To view all configuration options.
+#matugen color
 
-font=JetBrainsMono Nerd Font Mono:size=10
-format=<span color="#A0A0A5" size="13pt" line_height="1.4"><b>%a</b></span>\n<tt>%b</tt>
+#font=JetBrainsMono Nerd Font Mono:size=10
+format=<span size="13pt" line_height="1.4"><b>%a</b></span>\n<tt>%b</tt>
 sort=-time
 output=DP-2
 layer=top
-background-color=#0d0d0d90
+#background-color=#0d0d0d90
 width=450
 height=180
 margin=10
 padding=0,15,30
 border-size=2
-border-color=#f8f546
+#border-color=#f8f546
 border-radius=2
 icons=1
 max-icon-size=128
 default-timeout=5000
 ignore-timeout=1
 max-history=5
+#
+#[urgency=normal]
+#border-color=#657136
+#
+#[urgency=high]
+#border-color=#4f5953
+#default-timeout=0
+#
+#[app-name=lightcord]
+#border-color=#f2e0d0
+#
+#[summary~="log-.*"]
+#border-color=#728c14
+#
+#[app-name=lightcord summary~="(.*(^| )orz|ORZ|sto|STO|otl|OTL( |$).*)"]
+#invisible=1
+#
+#[category=mpd]
+#default-timeout=2000
+#group-by=category
+#
+##[mode=do-not-disturb]
+##invisible=1
+##on-notify=none
+#
+##[mode=silent]
+##on-notify=none
 
-[urgency=normal]
-border-color=#657136
-
-[urgency=high]
-border-color=#4f5953
-default-timeout=0
-
-[app-name=lightcord]
-border-color=#f2e0d0
-
-[summary~="log-.*"]
-border-color=#728c14
-
-[app-name=lightcord summary~="(.*(^| )orz|ORZ|sto|STO|otl|OTL( |$).*)"]
-invisible=1
-
-[category=mpd]
-default-timeout=2000
-group-by=category
-
-[mode=do-not-disturb]
-invisible=1
-on-notify=none
-
-[mode=silent]
-on-notify=none
+include=~/.config/mako/mako-colors

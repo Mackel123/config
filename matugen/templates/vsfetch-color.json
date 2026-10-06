@@ -1,0 +1,68 @@
+{
+  "extends": "",
+  "palette": {
+	  "bg": "{{colors.surface.default.hex}}",
+    "bg_header": "{{colors.surface.default.hex}}",
+    "border": "{{colors.outline_variant.default.hex}}",
+    "text": "{{colors.on_surface.default.hex}}",
+    "text_dim": "{{colors.on_surface_variant.default.hex}}",
+    "text_mid": "{{colors.secondary.default.hex}}",
+    "accent": "{{colors.primary.default.hex}}",
+    "ok": "{{colors.primary.default.hex}}",
+    "mid": "{{colors.secondary.default.hex}}",
+    "hi": "{{colors.secondary_fixed.default.hex}}",
+    "btn_github": "{{colors.tertiary.default.hex}}",
+    "btn_github_hover": "{{colors.tertiary_container.default.hex}}",
+    "btn_web": "{{colors.tertiary.default.hex}}",
+    "btn_web_hover": "{{colors.tertiary_container.default.hex}}"
+  },
+  "font": "Comic Mono",
+  "font_sizes": {
+    "title": 20,
+    "body":  13,
+    "small": 11
+  },
+  "logo": {
+    "size":     56,
+    "override": "",
+    "sidebar_position": "bottom"
+  },
+  "default_mode": "full",
+  "sections": ["hardware", "desktop", "terminal", "development", "uptime"],
+  "chassis": "",
+  "dev_tools": [
+    { "icon": "󱘗", "name": "Rust",   "cmd": "rustc --version 2>/dev/null | awk '{print $2}'" },
+    { "icon": "󰙱", "name": "Clang",  "cmd": "clang --version 2>/dev/null | grep -oP 'version [0-9.]+' | awk '{print $2}'" },
+    { "icon": "󰎙", "name": "NodeJS", "cmd": "node --version 2>/dev/null" },
+    { "icon": "󰟓", "name": "Go",     "cmd": "go version 2>/dev/null | awk '{print $3}' | tr -d go" },
+    { "icon": "󰪳", "name": ".NET",   "cmd": "dotnet --version 2>/dev/null" },
+    { "icon": "󰨞", "name": "Editor", "cmd": "code --version 2>/dev/null | head -1" },
+    { "icon": "󰊢", "name": "Git",    "cmd": "git --version 2>/dev/null | awk '{print $3}'" }
+  ],
+  "window": {
+    "width":       700,
+    "height_mini": 380,
+    "height_full": 680
+  },
+  "gradient_bar": {
+    "enabled": true,
+    "color_a": "{{colors.surface_tint.default.hex}}",
+    "color_b": "{{colors.secondary_container.default.hex}}"
+  },
+  "layout": "left",
+  "bg_image": {
+    "enabled": true,
+    "path":    "/home/mackelguo/.config/vsfetch/1301931.jpg",
+    "size":    200,
+    "opacity": 0.15
+  },
+  "animation": {
+    "enabled": false,
+    "type":    "rain",
+    "scope":   "body",
+    "color":   "",
+    "opacity": 0.25,
+    "speed":   1.0,
+    "drops":   80
+  }
+}

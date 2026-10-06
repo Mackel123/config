@@ -1,92 +1,130 @@
+@import "colors.css";
 * {
 	font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif,"Maple Mono SemiBold";
 	font-size: 11px;
 	font-weight: bold;
 }
 window#waybar {
-	background-color: alpha(#2e3440, 0.8);
-	color: #d8dee9;
+	all: unset;
+	background-color: alpha(@background, 0.6);
+	color: @on_background;
 	margin: 2px;
 }
 #window {
-	color: #d8dee9;
+	all: unset;
+	color: @on_background;
 	border-radius: 15px;
 }
 #tooltip {
-	background-color: #2e3440;
+	all: unset;
+	background-color: @surface;
 }
 #workspaces button {
-	padding: 0px 0px;
-	background-color: #3b4252;
-	color: #e5e9f0;
-	margin: 2px;
+	all: unset;
+	padding-left: 10px; 
+	padding-right:12px;
+	background-color: @surface_dim;
+	color: @secondary;
+	margin: 3px;
+	border: 5px;
 	border-radius: 0px;
 }
 #workspaces button.focused {
-    background-color: #ebcb8b;
-		color: #2e3440;
+  all: unset;
+	padding-left: 10px; 
+  padding-right:12px;
+	margin: 3px;
+	border: 5px;
+	border-radius: 0px;
+  background-color: @tertiary;
+	color: @surface_container;
 }
 #workspaces button.visible {
-		background-color: #a3be8c;
-		color: #2e3440;
+  all: unset;
+	padding-left: 10px; 
+  padding-right:12px;
+	margin: 3px;
+	border: 5px;
+	border-radius: 0px;
+	background-color: @tertiary_container;
+	color: @surface_container_high;
 }
 #network {
+	all: unset;
 	padding: 0 10px;
-	color: #5e81ac;
+	color: @on_surface;
 	border: 5px;
 }
 #mpd {
-	color: #2e3440;
+	all: unset;
+	color: @tertiary;
 	background-image:url("cover.jpg"), url("cover.png");
-	background-color: #bf616a;
+	background-color: @tertiary_tint;
 	border: 2px;
 	margin: 2px;
 }
 #cpu{
-	color: #a3be8c;
+	all: unset;
+	color: @inverse_primary;
 }
 #memory {
-	color: #ebcb8b;
+	all: unset;
+	color: @on_primary_container;
 }
 #clock {
+	all: unset;
 	padding: 0 10px;
-	background-color: #5e81ac;
-	border: 5px #2e3440;
+	background-color: @on_tertiary_fixed;
+	color: @tertiary_fixed;
+	border: 5px;
 	margin:2px;
 }
 #custom-launcher {
-	padding: 5px 0px;
+	all: unset;
+	padding-left: 5px;
+	padding-right: 6px;
+	color: @on_surface;
+	background-color: @surface;
+}
+#custom-finder {
+	all: unset;
+	color: @tertiary_fixed_dim;
 }
 #pulseaudio {
+	all: unset;
 	padding: 0px 10px;
-	color: #5e81ac;
-	background-color: #ebcb8b;
+	color: @tertiary_fixed;
+	background-color: @primary;
 	margin: 2px;
 	border-radius: 15px;
 }
 #disk {
+	all: unset;
 	padding:0px 10px;
 	margin: 2px;
-	background-color: #191D24;
-	color: #B74E58;
+	background-color: @scrim;
+	color: @tertiary;
 	font-family: JetBrains Mono;
 	border-radius: 15px;
 }
 #privacy {
+	all: unset;
 	padding: 0 10px;
-	color: #b48ead;
+	color: @secondary;
 }
 
 #custom-wayves {
-	color: #5e81ac;
+	all: unset;
+	color: @surface_color;
 }
 @keyframes blink-update {
 	to {
-		background-color: dodgerblue;
+		background-color: @on_secondary;
 	}
 }
 
 #custom-pacman {
+	all: unset;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -97,33 +135,49 @@ window#waybar {
 }
 #custom-lyrics {
 	font-family: "Maple Mono SemiBold";
-  color: #d08770;
+  color: @on_tertiaryy_variant;
   margin: 0 5px;
   padding: 0 10px;
 }
 
 #custom-lyrics.paused {
-  color: #d8dee9; /* Set custom color when paused */
+  color: @on_background; /* Set custom color when paused */
 }
 
 #custom-music {
 	font-family: "Maple Mono SemiBold";
-  padding: 0px 10px;
+  padding:0px 10px;
   margin: 0 5px;
 	border-radius: 15px;
 }
 
 #custom-music.playing {
-  color: #b48ead;
-  background: #3b4252;
+  color: @primary;
+  background: @ontline;
 }
 
 #custom-music.paused {
-  color: #ebcb8b;
-  background: #4c566a;
+  color: @primary_container;
+  background: @surface;
 }
 
 #custom-music.stopped {
-  color: #d08770;
-  background: #2e3440;
+  color: @tertiary_container;
+  background: @tertiary_fixed;
+}
+
+#custom-ncaptura-shot {
+	all: unset;
+	color: @on_surface;
+	background-color: @outline;
+	padding-left: 7px;
+	margin: 4px 0px
+}
+
+#custom-ncaptura-ocr {
+	all: unset;
+	color: @on_surface;
+	background-color: @outline;
+	padding-right: 5px;
+	margin: 4px 0px
 }

@@ -2,36 +2,35 @@
 -- Author: lokesh-krishna
 -- MIT license, see LICENSE for more details.
 
--- stylua: ignore
 local colors = {
-  blue   = '#5e81ac',
-  cyan   = '#88c0d0',
-  black  = '#2e3440',
-  white  = '#d8dee9',
-  red    = '#bf616a',
-  violet = '#b48ead',
-  grey   = '#4c566a',
-	oranger = '#D08770',
-	yellow = '#E8CB88',
-	green = '#A3BE8C',
+  base01 = '#c1c1ff',
+  base02 = '#404178',
+  base03 = '#131318',
+  base04 = '#e4e1e9',
+  base05 = '#e9b9d3',
+  base06 = '#c6c4dd',
+  base07 = '#2a292f',
+	base08 = '#404178',
+	base09 = '#454559',
+	base00 = '#c6c4dd',
 }
 
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.oranger },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.white, bg = colors.black},
-		x = { fg = colors.blue, bg = colors.black }
+    a = { fg = colors.base03, bg = colors.base08 },
+    b = { fg = colors.base04, bg = colors.base07 },
+    c = { fg = colors.base04, bg = colors.base03},
+		x = { fg = colors.base01, bg = colors.base03 }
   },
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  insert = { a = { fg = colors.base03, bg = colors.base01 } },
+  visual = { a = { fg = colors.base03, bg = colors.base02 } },
+  replace = { a = { fg = colors.base03, bg = colors.base05 } },
 
   inactive = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.black },
-    c = { fg = colors.white },
+    a = { fg = colors.base04, bg = colors.base03 },
+    b = { fg = colors.base04, bg = colors.base03 },
+    c = { fg = colors.base04 },
   },
 }
 
@@ -47,11 +46,11 @@ require('lualine').setup {
 			'filename',
 			'branch',
 			{'diff',
-      colored = true,
+      colobase05 = true,
       diff_color = {
-        added    = {fg = colors.cyan, bg = colors.grey},
-        modified = {fg = colors.cyan, bg = colors.grey},
-        removed  = {fg = colors.cyan, bg = colors.grey}
+        added    = {fg = colors.base02, bg = colors.base07},
+        modified = {fg = colors.base02, bg = colors.base07},
+        removed  = {fg = colors.base02, bg = colors.base07}
 				},
       symbols = {added = '+', modified = '~', removed = '-'},
 			source = nil, }
@@ -64,10 +63,10 @@ require('lualine').setup {
        sections = { 'error', 'warn', 'info', 'hint' },
        symbols = {error = ' ', warn = ' ', info = ' ', hint = '󰔊 '},
        diagnostics_color = {
-      	color_error = { fg = colors.red },
-      	color_warn = { fg = colors.yellow},
-      	color_info = { fg = colors.oranger },
-      	color_hint = { fg = colors.violet },
+      	color_error = { fg = colors.base05 },
+      	color_warn = { fg = colors.base09},
+      	color_info = { fg = colors.base08 },
+      	color_hint = { fg = colors.base06 },
       },}
 
     },

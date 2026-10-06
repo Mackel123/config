@@ -2,19 +2,22 @@
 	"layer":"top",
 	"position":"top",
 	"height":25,
-	"spacing":5,
+	"spacing":0,
 	"modules-left":[
 		 "custom/launcher",
-		 "custom/diskicon",
-		 "disk",
+		 "custom/finder",
 		 "niri/workspaces",
 		 "niri/window",
-		 "custom/pacman"
+		 "custom/pacman",
+		 "disk",
+		 "custom/ncaptura-shot",
+		 "custom/ncaptura-ocr"
 	 ],
 	 "modules-center":[
 		 "custom/wayves"
 	 ],
 	 "modules-right":[
+		 "tray",
 		 "custom/lyrics",
 		 "privacy",
 		 "pulseaudio",
@@ -23,8 +26,7 @@
 		 "memory",
 		 "network",
 		 "custom/weather",
-		 "clock",
-		 "tray"
+		 "clock"
 	 ],
 	  "niri/workspaces": {
     "disable-scroll": true,
@@ -71,8 +73,12 @@
     }
 	},
    "custom/launcher":{
-     "format": " ",
+     "format": "  ",
 		 "on-click" : "~/.config/rofi/bin/launcher.sh"
+	 },
+	 "custom/finder":{
+		 "format": "  ",
+		 "on-click": "~/.config/rofi/bin/finder.sh"
 	 },
 
 	 "cpu": {
@@ -158,7 +164,8 @@
    },
 	 "tray" : {
 		 "icon-size": 20,
-		 "spacing" : 10
+		 "spacing" : 10,
+		 "show-passive-items":true
 	 },
    
    "pulseaudio": {
@@ -184,11 +191,7 @@
 	 "disk": {
 		 "interval": 5,
 		 "format": "{percentage_free}% [{used}]",
-		 "path": "/"
-	 },
-	 "custom/diskicon" : {
-		 "format":"{icon}",
-		 "format-icons":"<span color=\"#5e81ac\"> 󱛟 </span>",
+		 "path": "/",
 		 "on-click": "kitty ncdu"
 	 },
 	 "custom/weather":{
@@ -197,6 +200,7 @@
     "return-type": "json",
     "exec": "~/.config/niri/waybar/modules/weather/get_weather.rb",
     "on-click": "~/.config/niri/waybar/modules/weather/get_weather.rb --next", // Cycle views
+		"on-right-click": "mousam",
     "interval": 900 // Every 15 minutes
 	 },
 	"privacy": {
@@ -256,8 +260,19 @@
 	 "custom/music": {
     "format": "{}",
     "return-type": "json",
+		"max-length": 30,
     "exec": "waybar-module-music -m --effect-speed 150 -a 10 -t 15 ",
 		"on-click": "kitty -e rmpc",
-		"on-click-right": "playerctl play-pause"
-  }
+		"on-click-right": "playerctl play-stop"
+  },
+	"custom/ncaptura-shot": {
+		"format": " ",
+		"on-click": "ncaptura screenshot region",
+		"on-click-right":"ncaptura"
+	},
+	"custom/ncaptura-ocr":{
+		"format": "󱄺 ",
+		"on-click": "ncaptura ocr",
+		"on-click-right":"ncaptura translate region"
+	}
 }

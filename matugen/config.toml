@@ -1,0 +1,176 @@
+[config]
+version_check  = true
+fallback_color = "#2e3440"
+prefer         = "closest-to-fallback"
+
+[config.wallpaper]
+# 是否在生成颜色时自动设置壁纸
+set = true
+# 设置壁纸的命令（例如使用 swww, hyprpaper 或 swww-daemon）
+command = "awww"
+arguments = ["img", "--transition-type", "grow", "image_path"]
+#waybar
+[templates.waybar]
+input_path = "~/.config/matugen/templates/colors.css"
+output_path = "~/.config/niri/waybar/colors.css"
+post_hook = "pkill waybar && waybar -c ~/.config/niri/waybar/config.jsonc -s ~/.config/niri/waybar/style.css &"
+#mako
+[templates.mako]
+input_path = "~/.config/matugen/templates/mako"
+output_path = '~/.config/mako/mako-colors'
+post_hook = 'makoctl reload'
+#kitty
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+#neovim
+[templates.neovim]
+input_path = "~/.config/matugen/templates/neovim/nvim-colors.json"
+output_path = "~/.config/matugen/themes/nvim-colors.json"
+post_hook = "pkill -SIGUSR1 nvim"
+[templates.lualine]
+input_path = "~/.config/matugen/templates/neovim/lualine.lua"
+output_path = "~/.config/nvim/lua/plugins/ui/lualine.lua"
+post_hook = "pkill -SIGUSR1 nvim"
+
+#yazi
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+#niri
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri-colors.kdl'
+output_path = '~/.config/niri/colors.kdl'
+post_hook = 'niri msg action load-config-file'
+#btop
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
+#rmpc
+[templates.rmpc]
+input_path = '~/.config/matugen/templates/rmpc/rmpc.ron'
+output_path = '~/.config/rmpc/themes/matugen.ron'
+#foot
+[templates.foot]
+input_path  = '~/.config/matugen/templates/foot-colors.ini'
+output_path = '~/.config/matugen/themes/foot-colors.ini'
+post_hook   = '''
+  pkill -SIGUSR1 foot
+  ln -nfs "$HOME/.config/matugen/themes/foot-colors.ini" "$HOME/.config/foot/foot-colors.ini"
+  touch "$HOME/.config/foot/foot.ini" || :
+'''
+#gtk
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = '~/.config/matugen/post-hook-scripts/gtk-themes-reload.sh'
+#zathura
+[templates.zathura]
+input_path = '~/.config/matugen/templates/zathura-colors'
+output_path = '~/.config/zathura/zathurarc'
+#rofi
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/share/color.rasi'
+#qt
+[templates.color-scheme]
+input_path = '~/.config/matugen/templates/Matugen.colors'
+output_path = '~/.local/share/color-schemes/Matugen.colors'
+#kvantum
+[templates.kvantum_kvconfig]
+input_path = '~/.config/matugen/templates/kvantum-colors.kvconfig'
+output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
+#kvautum svg matugen
+[templates.kvantum_svg]
+input_path = '~/.config/matugen/templates/kvantum-colors.svg'
+output_path = '~/.config/Kvantum/matugen/matugen.svg'
+#cava
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-colors.ini'
+output_path = '~/.config/cava/themes/matugen'
+past_hook = 'pkill -USR1 cava'
+#vesktop discord unofficial client
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/system24.css'
+output_path = '~/.config/vesktop/themes/system24.css'
+#pywayfox
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox-colors.json'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+#firefox-web-color
+[templates.firefox-webside-color]
+input_path = '~/.config/matugen/templates/firefox-colors.css'
+output_path = '~/.mozilla/firefox/x7iqoztk.default-release/chrome/colors.css'
+#starship
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
+#vsfetch
+[templates.vsfetch]
+input_path = '~/.config/matugen/templates/vsfetch-color.json'
+output_path = '~/.config/vsfetch/config.json'
+#spicetify
+[templates.spotify]
+input_path = '~/.config/matugen/templates/spicetify.ini'
+output_path = '~/.config/spicetify/Themes/Sleek/color.ini'
+post_hook = 'pgrep -x spicetify > /dev/null || spicetify apply -n'
+#wezterm
+[templates.wezterm]
+input_path = '~/.config/matugen/templates/wezterm_theme.toml'
+output_path = '~/.config/wezterm/colors/matugen_theme.toml'
+post_hook = 'touch ~/.config/wezterm/wezterm.lua'
+#obs
+[templates.obs]
+input_path = '~/.config/matugen/templates/matugen.obt'
+output_path = '~/.config/obs-studio/themes/matugen.obt'
+#mpv
+[templates.mpv]
+input_path = '~/.config/matugen/templates/mpv_matugen.conf'
+output_path = '~/.config/mpv/matugen.conf'
+#qutebrowser
+[templates.qutebrowser]
+input_path = '~/.config/matugen/templates/qute_matugen.py'
+output_path = '~/.config/qutebrowser/matugen.py'
+#papirus-folders
+[templates.papirus-folders]
+input_path = '~/.config/matugen/templates/papirus-color'
+colors_to_compare = [
+    { name = "black",      color = "#4f4f4f" },
+    { name = "blue",       color = "#5294e2" },
+    { name = "bluegrey",   color = "#607d8b" },
+    { name = "brown",      color = "#ae8e6c" },
+    { name = "carmine",    color = "#a30002" },
+    { name = "cyan",       color = "#00bcd4" },
+    { name = "darkcyan",   color = "#45abb7" },
+    { name = "deeporange", color = "#eb6637" },
+    { name = "green",      color = "#87b158" },
+    { name = "grey",       color = "#8e8e8e" },
+    { name = "indigo",     color = "#5c6bc0" },
+    { name = "magenta",    color = "#ca71df" },
+    { name = "nordic",     color = "#81a1c1" },
+    { name = "orange",     color = "#ee923a" },
+    { name = "palebrown",  color = "#d1bfae" },
+    { name = "paleorange", color = "#eeca8f" },
+    { name = "pink",       color = "#f06292" },
+    { name = "red",        color = "#e25252" },
+    { name = "teal",       color = "#16a085" },
+    { name = "violet",     color = "#7e57c2" },
+    { name = "white",      color = "#e4e4e4" },
+    { name = "yaru",       color = "#676767" },
+    { name = "yellow",     color = "#f9bd30" },
+]
+compare_to = "{{ colors.primary.default.hex }}"
+post_hook = 'nohup sudo -n papirus-folders -C {{ closest_color }} -u > /dev/null 2>&1 &'
+index = 1
+#telegram-desktop theme
+[templates.telegram-desktop]
+input_path = '~/.config/matugen/templates/telegram.tdesktop-theme'
+output_path = '~/Progjects/telegram.tdesktop-theme'

@@ -33,9 +33,9 @@ window {
     padding:                     0px;
     border:                      5px solid;
     border-radius:               4px;
-    border-color:                @selected;
+    border-color:                @primary;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            @surface;
 }
 
 /*****----- Main Box -----*****/
@@ -46,7 +46,7 @@ mainbox {
     padding:                     20px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @primary;
     background-color:            transparent;
     children:                    [ "inputbar", "message", "listview" ];
 }
@@ -59,9 +59,9 @@ inputbar {
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @primary-fixed;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @primary;
     children:                    [ "textbox-prompt-colon", dummy, "prompt"];
 }
 
@@ -72,18 +72,18 @@ dummy {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         " ";
-    padding:                     10px 14px;
+    str:                         "  ";
+    padding:                     10px 12px;
     border-radius:               4px;
-    background-color:            @urgent;
-    text-color:                  @background;
+    background-color:            @surface-bright;
+    text-color:                  @tertiary;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               4px;
-    background-color:            @active;
-    text-color:                  @background;
+    background-color:            @primary-fixed-dim;
+    text-color:                  @on-primary-fixed-variant;
 }
 
 /*****----- Message -----*****/
@@ -93,16 +93,16 @@ message {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               4px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    border-color:                @primary-fixed;
+    background-color:            @on-primary;
+    text-color:                  @on-surface;
 }
 textbox {
     background-color:            inherit;
     text-color:                  inherit;
     vertical-align:              0.5;
     horizontal-align:            0.5;
-    placeholder-color:           @foreground;
+    placeholder-color:           @primary-fixed-dim;
     blink:                       true;
     markup:                      true;
 }
@@ -110,9 +110,9 @@ error-message {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @foreground;
+    border-color:                @primary-fixed;
+    background-color:            @surface-dim;
+    text-color:                  @primary;
 }
 
 /*****----- Listview -----*****/
@@ -133,9 +133,9 @@ listview {
     padding:                     0px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @primary;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @inverse-primary;
     cursor:                      "default";
 }
 
@@ -147,9 +147,9 @@ element {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               4px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    border-color:                @secondary;
+    background-color:            @secondary;
+    text-color:                  @surface-dim;
     cursor:                      pointer;
 }
 element-text {
@@ -162,6 +162,6 @@ element-text {
 element selected.normal {
     border:                      0px 2px 0px 2px;
     border-radius:               4px;
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            var(primary);
+    text-color:                  var(surface-container);
 }

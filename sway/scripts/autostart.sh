@@ -5,5 +5,5 @@ fcitx5 &
 mpd-notification &
 aria2c &
 lxqt-policykit &
-mpvpaper -o "loop" ALL ~/Pictures/Wallpaper/live/starfall-elpis-of-the-abyss.3840x2160.mp4 &
+swaybg -i /home/mackelguo/Pictures/Wallpaper/1269021.png -m fill
 locasend --hidden &

@@ -179,11 +179,10 @@ hl.config(
   }
 )
 
-
-
 --modules
 require("modules.autostart")
 require("modules.environment")
 require("modules.keybinds")
 require("modules.animation")
 require("modules.windowrule")
+require("modules.permission")

@@ -26,9 +26,9 @@ window {
 		padding:                     5px;
     border:                      5px;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @primary;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            @surface;
 }
 
 /*****----- Main Box -----*****/
@@ -48,9 +48,9 @@ inputbar {
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @on-primary;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @primary;
     children:                    [  "prompt","entry"];
 }
 
@@ -58,8 +58,8 @@ prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               0px;
-    background-color:            @active;
-    text-color:                  @background;
+    background-color:            @tertiary;
+    text-color:                  @on-tertiary;
 }
 
 entry  {
@@ -67,8 +67,8 @@ entry  {
 		padding:                     5px  2px;
 		border-radius:               2px;
 		placeholder:                 "clipboard...";
-		text-color:                  @foreground;
-		background-color:            @background-alt;
+		text-color:                  @secondary;
+		background-color:            @surface-bright;
 		placeholder-color:           "#4c566aFF";
 		vertical-align:              0.5;
 		horizontal-align:            0.02;
@@ -94,9 +94,9 @@ element {
     padding:                     10px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @surface;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @primary;
     cursor:                      pointer;
 }
 element-text {
@@ -109,22 +109,22 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background);
-    text-color:                  var(foreground);
+    background-color:            @surface;
+    text-color:                  @secondary;
 }
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
-    background-color:            var(urgent);
-    text-color:                  var(background);
+    background-color:            @surface-container;
+    text-color:                  @secondary-fixed;
 }
 element normal.active,
 element alternate.active,
 element selected.urgent {
-    background-color:            var(active);
-    text-color:                  var(background);
+    background-color:            @primary;
+    text-color:                  @on-primary;
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            @secondary-fixed;
+    text-color:                  @surface-container;
 }

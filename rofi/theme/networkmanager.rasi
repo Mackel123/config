@@ -1,3 +1,5 @@
+@import                     "~/.config/rofi/share/color.rasi"
+@import                     "~/.config/rofi/share/font.rasi"
 
 /**--configuration--**/
 configuration {
@@ -7,13 +9,13 @@ configuration {
 /**--Global propetries--**/
 *{
    font:                     "JetBrains Mono Nerd Font 9";
-   background:               #2e3440;
-   background-alt:           #4c566a;
-	 foreground:               #d8dee9;
-   selected:                 #b48ead;
-	 active:                   #bf616a;
-	 urgent:                   #5e81ac;
-	 border:                   #d08770;
+   background:               @surface;
+   background-alt:           @surface-bright;
+	 foreground:               @on-surface;
+   selected:                 @on-tertiary-fixed;
+	 active:                   @secondary;
+	 urgent:                   @secondary-fixed;
+	 border:                   @primary;
 }
 
 window {

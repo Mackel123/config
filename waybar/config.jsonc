@@ -253,6 +253,7 @@
     "tooltip": true,
     "interval": 3600,
     "exec": "wttrbar --location Chongqing,CN",
-    "return-type": "json"	 
+    "return-type": "json",
+		"on-right-click": "mousam"
   }
 }

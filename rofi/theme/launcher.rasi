@@ -24,29 +24,29 @@ configuration {
 @import                          "~/.config/rofi/share/font.rasi"
 
 * {
-    border-colour:               var(selected);
-    handle-colour:               var(selected);
-    background-colour:           var(background);
-    foreground-colour:           var(foreground);
-    alternate-background:        var(background-alt);
-    normal-background:           var(background);
-    normal-foreground:           var(foreground);
-    urgent-background:           var(urgent);
-    urgent-foreground:           var(background);
-    active-background:           var(active);
-    active-foreground:           var(background);
-    selected-normal-background:  var(selected);
-    selected-normal-foreground:  var(background);
-    selected-urgent-background:  var(active);
-    selected-urgent-foreground:  var(background);
-    selected-active-background:  var(urgent);
-    selected-active-foreground:  var(background);
-    alternate-normal-background: var(background);
-    alternate-normal-foreground: var(foreground);
-    alternate-urgent-background: var(urgent);
-    alternate-urgent-foreground: var(background);
-    alternate-active-background: var(active);
-    alternate-active-foreground: var(background);
+    border-colour:               var(primary);
+    handle-colour:               var(on-primary);
+    background-colour:           var(surface);
+    foreground-colour:           var(primary-fixed);
+    alternate-background:        var(surface-bright);
+    normal-background:           var(surface);
+    normal-foreground:           var(primary);
+    urgent-background:           var(surface-dim);
+    urgent-foreground:           var(secondary);
+    active-background:           var(surface-bright);
+    active-foreground:           var(primary-fixed-dim);
+    selected-normal-background:  var(primary);
+    selected-normal-foreground:  var(inverse-primary);
+    selected-urgent-background:  var(surface);
+    selected-urgent-foreground:  var(inverse-primary);
+    selected-active-background:  var(primary-fixed-dim);
+    selected-active-foreground:  var(surface-bright);
+    alternate-normal-background: var(surface);
+    alternate-normal-foreground: var(primary);
+    alternate-urgent-background: var(surface-dim);
+    alternate-urgent-foreground: var(secondary);
+    alternate-active-background: var(surface-bright);
+    alternate-active-foreground: var(primary);
 }
 
 /*****----- Main Window -----*****/

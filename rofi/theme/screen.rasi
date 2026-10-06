@@ -32,9 +32,9 @@ window {
     padding:                     0px;
     border:                      5px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @primary;
     cursor:                      "default";
-    background-color:            @background;
+    background-color:            @surface;
 }
 
 /*****----- Main Box -----*****/
@@ -54,9 +54,9 @@ inputbar {
     padding:                     0px;
     border:                      0px;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @primary-fixed;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @primary;
     children:                    [ "textbox-prompt-colon", "prompt"];
 }
 
@@ -66,15 +66,15 @@ textbox-prompt-colon {
     str:                         " ";
     padding:                     10px 10px;
     border-radius:               0px;
-    background-color:            @urgent;
-    text-color:                  @background;
+    background-color:            @surface-bright;
+    text-color:                  @on-primary;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               0px;
-    background-color:            @active;
-    text-color:                  @background;
+    background-color:            @on-primary-fixed;
+    text-color:                  @inverse-primary;
 }
 
 /*****----- Listview -----*****/
@@ -97,9 +97,9 @@ element {
     padding:                     20px 10px;
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected;
+    border-color:                @primary-fixed-dim;
     background-color:            transparent;
-    text-color:                  @foreground;
+    text-color:                  @primary-fixed;
     cursor:                      pointer;
 }
 element-text {
@@ -113,22 +113,22 @@ element-text {
 
 element normal.normal,
 element alternate.normal {
-    background-color:            var(background-alt);
-    text-color:                  var(foreground);
+    background-color:            var(surface);
+    text-color:                  var(primary);
 }
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
-    background-color:            var(urgent);
-    text-color:                  var(background);
+    background-color:            var(surface-bright);
+    text-color:                  var(primary);
 }
 element normal.active,
 element alternate.active,
 element selected.urgent {
-    background-color:            var(active);
-    text-color:                  var(background);
+    background-color:            var(surface-dim);
+    text-color:                  var(primary);
 }
 element selected.normal {
-    background-color:            var(selected);
-    text-color:                  var(background);
+    background-color:            var(primary-fixed);
+    text-color:                  var(surface-dim);
 }

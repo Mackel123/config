@@ -42,9 +42,9 @@ environment {
 	QT_AUTO_SCREEN_SCALE_FACTOR "1"
 	TERMINAL "kitty"
 	EDITOR "vim"
-	BROWSER "firefox"
+	BROWSER "helium"
 	FILEMANAGER "pcmanfm-qt"
-	PLAYERCTL_IGNORE_PLAYER "chromium*,firefox,io.github.mpc_qt.mpc-qt$,vlc,mpv"
+	PLAYERCTL_IGNORE_PLAYER "chromium*,firefox,io.github.mpc_qt.mpc-qt$,vlc,mpv,MpcQt"
 }
 
 //cursor
@@ -57,7 +57,7 @@ cursor {
 
 //layout
 layout {
-    gaps 10
+    gaps 15
     center-focused-column "never"
     preset-column-widths {
         proportion 0.33333
@@ -88,12 +88,12 @@ layout {
         color "#0007"
     }
     struts {
-        left 5
-        right 5
+        left 10
+        right 10
         top 10
         bottom 5
     }
-	background-color "transparent"
+//	background-color "transparent"
 }
 //overview
 //overview-wallpaper
@@ -103,22 +103,22 @@ layer-rule {
 		background-effect {
 			blur true
 		}
-		opacity 0.5
+		opacity 0.6
 }
 overview {
     workspace-shadow {
         on
     }
 		zoom 0.4
-		backdrop-color "#000B0D30"
+		backdrop-color "#000B0D20"
 }
 //windows-swicher
 recent-windows {
 	debounce-ms 750
 	open-delay-ms 150
 	highlight {
-		active-color "#5e81ac"
-		urgent-color "#2e3440"
+//		active-color "#5e81ac"
+//		urgent-color "#2e3440"
 		padding 30
 		corner-radius 3
 	}
@@ -188,10 +188,12 @@ window-rule {
 }
 window-rule {
 	match app-id="firefox$"
-	match app-id=r#"^org\.mozilla\.Thunderbird$"#
 	match app-id="qutebrowser$"
+	match app-id="google-chrome$"	
 	match app-id=r#"org\.qbittorrent\.qBittorrent$"#
 	match app-id="helium$"
+	match app-id=r#"^org\.mozilla\.Thunderbird$"#
+	match app-id=r#"^io\.github\.amit9838\.mousam$"#
 	open-on-workspace "browser"
 }
 window-rule {
@@ -276,6 +278,7 @@ window-rule {
 	match app-id="FeelUOwn$"
 	match app-id=r#"^org\.localsend\.localsend_app$"#
 	match app-id=r#"^io\.github\.xiaoyifang\.goldendict_ng$"#
+	match app-id=r#"^io\.github\.amit9838\.mousam$"#
 	match app-id=r#"^org\.zathura\.Zathura$"#
 	match app-id="nwg-look$"
 	match app-id="pcmanfm-qt$"
@@ -323,6 +326,7 @@ window-rule {
 window-rule { 
 	match app-id="code$"	
 	match app-id="zen$"	
+//	match app-id="google-chrome$"	
 	match app-id="kitty$"
 	match app-id=r#"^org\.localsend\.localsend_app$"#
 	match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
@@ -343,8 +347,9 @@ window-rule {
   match app-id=r#"^info\.febvre\.Komikku$"#	
 	match app-id=r#"org\.telegram\.desktop$"#
 	match app-id=r#"^io\.github\.xiaoyifang\.goldendict_ng$"#
+	match app-id=r#"^org\.mozilla\.Thunderbird$"#
 	draw-border-with-background false
-	opacity 0.7
+	opacity 0.8
 }
 
 //opacity for Nautilus
@@ -358,13 +363,13 @@ window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {fixed 960; }
 	  open-floating true
-		opacity 0.6
+		opacity 0.9
 }
 //block-screenshot
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
-    block-out-from "screen-capture"
+    block-out-from "screencast"
 }
 //radius-corner
 window-rule {
@@ -382,8 +387,8 @@ window-rule {
 blur {
 	passes 4
 	offset 3
-	noise 0.3
-	saturation 0.8
+	noise 0.25
+	saturation 0.2
 }
 window-rule {
 	background-effect {
@@ -443,7 +448,7 @@ layer-rule {
 layer-rule {
 	match namespace="^notifications$"
 	opacity 0.9
-	block-out-from "screencast"
+	block-out-from "screen-capture"
 }
 //firefox-pip
 window-rule {
@@ -490,23 +495,23 @@ window-rule {
 window-rule {
     match is-window-cast-target=true
 
-    focus-ring {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
-    }
-
-    border {
-        inactive-color "#7d0d2d"
-    }
-
-    shadow {
-        color "#7d0d2d70"
-    }
-
-    tab-indicator {
-        active-color "#f38ba8"
-        inactive-color "#7d0d2d"
-    }
+//    focus-ring {
+//        active-color "#f38ba8"
+//        inactive-color "#7d0d2d"
+//    }
+//
+//    border {
+//        inactive-color "#7d0d2d"
+//    }
+//
+//    shadow {
+//        color "#7d0d2d70"
+//    }
+//
+//    tab-indicator {
+//        active-color "#f38ba8"
+//        inactive-color "#7d0d2d"
+//    }
 }
 
 //keybind-map
@@ -643,7 +648,7 @@ binds {
 		Mod+X hotkey-overlay-title="rofi-powermenu"      { spawn "~/.config/rofi/bin/powermenu.sh"; }
     Mod+G hotkey-overlay-title="rofi-clipboard"      { spawn "~/.config/niri/scripts/clip.sh"; }
 		Mod+N hotkey-overlay-title="rofi-networkmanager" { spawn "networkmanager_dmenu"; }
-
+		Mod+D hotkey-overlay-title="rofi-screenshot"     { spawn "~/.config/rofi/bin/screenshot.sh"; }
 		//TUI application
 		CTRL+ALT+A hotkey-overlay-title="launch nvtop"    { spawn "kitty" "-e" "nvtop"; }
     CTRL+ALT+B hotkey-overlay-title="launch btop"     { spawn "kitty" "-e" "btop"; }
@@ -660,24 +665,29 @@ binds {
 		CTRL+ALT+C hotkey-overlay-title="launch veet"     { spawn "kitty" "-e" "veet";}
 		//application
 		CTRL+ALT+Q   hotkey-overlay-title="launch qutebrowser"  { spawn "qutebrowser"; }
-		Mod+SHIFT+G  hotkey-overlay-title="launch pcmanfm-qt"  { spawn "pcmanfm-qt"; }
-		Mod+SHIFT+W  hotkey-overlay-title="launch firefox"    { spawn "firefox"; }
-		Mod+SHIFT+E  hotkey-overlay-title="launch code"       { spawn "code"; }
-		Mod+SHIFT+A  hotkey-overlay-title="launch opentoonz"  { spawn "opentoonz"; }
-		Mod+SHIFT+B  hotkey-overlay-title="launch blender"    { spawn "blender";}
+		Mod+SHIFT+G  hotkey-overlay-title="launch pcmanfm-qt"   { spawn "pcmanfm-qt"; }
+		Mod+SHIFT+W  hotkey-overlay-title="launch firefox"      { spawn "firefox"; }
+		Mod+SHIFT+H  hotkey-overlay-title="launch helium"       { spawn "helium-browser"; }
+		Mod+SHIFT+E  hotkey-overlay-title="launch code"         { spawn "code"; }
+		Mod+SHIFT+A  hotkey-overlay-title="launch opentoonz"    { spawn "opentoonz"; }
+		Mod+SHIFT+B  hotkey-overlay-title="launch blender"      { spawn "blender";}
 	} 
 
 //start application 
 spawn-at-startup "waybar" "-c" "/home/mackelguo/.config/niri/waybar/config.jsonc" "-s" "/home/mackelguo/.config/niri/waybar/style.css"
 spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock-fancy" "before-sleep" "swaylock-fancy" 
 spawn-at-startup "mako" 
+spawn-at-startup "gpu-screen-recorder" 
 spawn-at-startup "awww-daemon" 
 spawn-at-startup "fcitx5 -d"
 spawn-at-startup "aria2c"
 spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "/home/mackelguo/.config/niri/scripts/swaybg.sh"
 //start sh
 spawn-sh-at-startup "pactl load-module module-virtual-source source_name='Loopback' master=alsa_input.pci-0000_04_00.6.analog-stereo.monitor use_volume_sharing=no"
-spawn-sh-at-startup "swaybg -i /home/mackelguo/Pictures/Wallpaper/1269021.png -m fill"
 spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
 spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 spawn-sh-at-startup "playerctld daemon"
+
+include "./colors.kdl"
+

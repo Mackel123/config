@@ -1,14 +1,22 @@
 [[plugin.deps]]
-use = "yazi-rs/plugins:full-border"
-rev = "56971d0"
-hash = "3996fc74044bc44144b323686f887e1"
-
-[[plugin.deps]]
 use = "boydaihungst/restore"
 rev = "4eda0bf"
 hash = "778941e7f1ebbacd60f4e254bb3c51de"
 
-[[flavor.deps]]
-use = "AdithyanA2005/nord"
-rev = "bdf0bd4"
-hash = "816970e00d643d3e8213b430d2148aec"
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "6229767"
+hash = "f281261ff04ad7ec867c3f802a50835f"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:toggle-pane"
+rev = "6229767"
+hash = "5b2fbef7d1513ce38ff72623a071a5e"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:types"
+rev = "6229767"
+hash = "d368d5a6a72657e1c0e7ee7340dcea8c"
+
+[flavor]
+deps = []

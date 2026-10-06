@@ -103,4 +103,4 @@ bind("Print", dsp.exec_cmd("hyprshot -m region"))
 bind(ctrl.. "+ Print", dsp.exec_cmd("hyprshot -m output"))
 bind(altMod.."+ Print", dsp.exec_cmd("hyprshot -m window"))
 --lockscreen keybinds
-bind( ctrl.." + L", dsp.exec_cmd( "hyprlock" ))
+bind( mainMod.." + L", dsp.exec_cmd( "hyprlock" ))

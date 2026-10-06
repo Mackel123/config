@@ -9,4 +9,4 @@ settings:
   content.javascript.enabled:
     global: true
   content.proxy:
-    global: none
+    global: socks5://127.0.0.1:7890
